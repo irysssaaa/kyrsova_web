@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="logo">cyber</div>
+    <nav class="nav" id="nav">
+      <a href="#" class="active">Головна</a>
+      <a href="#">Про нас</a>
+      <a href="#">Контакти</a>
+      <a href="#">Блог</a>
+      <div class="search mobile-search">
+        <input type="text" placeholder="Пошук...">
+        <button aria-label="Шукати"><i class="fas fa-search" aria-hidden="true"></i></button>
+      </div>
+    </nav>
+    <div class="search desktop-search">
+      <input type="text" placeholder="Пошук...">
+      <button aria-label="Шукати"><i class="fas fa-search" aria-hidden="true"></i></button>
+    </div>
+    <div class="icons">
+      <a href="#" aria-label="Обране"><i class="fas fa-heart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Кошик"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Обліковий запис"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+    <div class="burger" id="burger" aria-label="Меню"><i class="fas fa-bars" aria-hidden="true"></i></div>
+  </header>
+
+  <!-- ===== BLOCK 1: HERO ===== -->
+  <section class="banner">
+    <div class="banner-content">
+      <p class="subtitle">Pro. За межі можливого.</p>
+      <h1 class="main-title"><span class="mt-thin">iPhone 14</span> <span class="mt-pro">Pro</span></h1>
+
+      <p class="description">Створений, щоб змінити все на краще. Для кожного.</p>
+      <button class="btn" aria-label="Купити зараз">Купити зараз</button>
+    </div>
+    <div class="banner-image">
+      <img id="main-img" src="images/iphone1.png" alt="iPhone 14 Pro — основне зображення">
+      <div class="thumbs">
+        <img src="images/iphone1.png" alt="Вид Deep Purple" class="active" onclick="changeImage(this)">
+        <img src="images/iphone2.jpg" alt="Вид Silver" onclick="changeImage(this)">
+        <img src="images/iphone2_.png" alt="Вид Gold" onclick="changeImage(this)">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 2: SMALL BANNERS ===== -->
+  <section class="product-grid" aria-labelledby="small-banners-title">
+    <h2 id="small-banners-title" style="position:absolute;left:-9999px;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden;">Рекомендовані плитки</h2>
+    <div class="left-side">
+      <div class="product-banner white">
+        <img src="images/playstation.png" alt="Ігрова консоль PlayStation 5">
+        <div class="text">
+          <h2>PlayStation 5</h2>
+          <p>Надпотужні CPU, GPU та SSD з інтегрованим I/O переосмислять ваш досвід PlayStation.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="product-banner light">
+          <img src="images/headphone.png" alt="AirPods Max">
+          <div class="text">
+            <h2><span class="brand">Apple</span><br><span class="line">AirPods</span><br><span class="line bold">Max</span></h2>
+            <p>Обчислювальне аудіо. Послухай — це потужно.</p>
+          </div>
+        </div>
+        <div class="product-banner dark">
+          <img src="images/vision.png" alt="Apple Vision Pro">
+          <div class="text">
+            <h2><span class="brand">Apple</span><br><span class="line bold">Vision Pro</span></h2>
+            <p>Занурливий спосіб відчувати розваги.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="product-banner gray big">
+        <div class="text">
+          <h2><span class="macbook">MacBook</span><br><span class="air">Air</span></h2>
+          <p>Новий 15‑дюймовий MacBook Air відкриває більше простору для улюблених справ завдяки великому екрану Liquid Retina.</p>
+          <button class="btn black" aria-label="Купити зараз">Купити зараз</button>
+        </div>
+        <div class="img-wrapper">
+          <img src="images/MacBook Pro 14.png"
+               alt="Дисплей MacBook Air"
+               class="macbook-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 3: CATEGORY ===== -->
+  <section class="category" aria-labelledby="category-title">
+    <h2 id="category-title" class="visually-hidden" style="position:absolute;left:-9999px;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden;">Перегляд за категоріями</h2>
+    <div class="category-inner">
+      <div class="category-top">
+        <h3 class="category-title">Перегляд за категоріями</h3>
+        <div class="category-arrows" aria-hidden="true">
+          <button class="arrow btn-arrow" aria-label="Попередні"><i class="fas fa-chevron-left"></i></button>
+          <button class="arrow btn-arrow" aria-label="Наступні"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <div class="category-cards">
+        <div class="card"><div class="card-icon"><img src="images/phones.png" alt="Смартфони"></div><div class="card-label">Смартфони</div></div>
+        <div class="card"><div class="card-icon"><img src="images/Smart Watches.png" alt="Розумні годинники"></div><div class="card-label">Розумні годинники</div></div>
+        <div class="card"><div class="card-icon"><img src="images/Cameras.png" alt="Камери"></div><div class="card-label">Камери</div></div>
+        <div class="card"><div class="card-icon"><img src="images/Headphones.png" alt="Навушники"></div><div class="card-label">Навушники</div></div>
+        <div class="card"><div class="card-icon"><img src="images/Computers.png" alt="Комп’ютери"></div><div class="card-label">Комп’ютери</div></div>
+        <div class="card"><div class="card-icon"><img src="images/Gaming.png" alt="Ігри"></div><div class="card-label">Ігри</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 4: PRODUCTS ===== -->
+  <section class="products" aria-labelledby="products-title">
+    <h2 id="products-title" style="position:absolute;left:-9999px;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden;">Товари</h2>
+    <div class="product-tags" role="tablist" aria-label="Фільтри товарів">
+      <div class="tag selected" role="tab" aria-selected="true" tabindex="0">Новинки</div>
+      <div class="tag normal" role="tab" aria-selected="false" tabindex="0">Бестселери</div>
+      <div class="tag normal" role="tab" aria-selected="false" tabindex="0">Рекомендовані товари</div>
+    </div>
+    <div class="products-grid">
+      <!-- row 1 -->
+      <div class="product-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/iphone14.png" class="product-img" alt="Apple iPhone 14 Pro Max">
+        <div class="product-info">
+          <div class="product-desc">Apple iPhone 14 Pro Max 128GB Deep Purple</div>
+          <div class="product-price">$900</div>
+          <button class="btn-buy" aria-label="Купити">Купити</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/camera6k.png" class="product-img" alt="Blackmagic Pocket Cinema Camera 6K">
+        <div class="product-info">
+          <div class="product-desc">Blackmagic Pocket Cinema Camera 6K</div>
+          <div class="product-price">$2535</div>
+          <button class="btn-buy" aria-label="Купити">Купити</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/applewatch.png" class="product-img" alt="Apple Watch Series 9">
+        <div class="product-info">
+          <div class="product-desc">Apple Watch Series 9 GPS 41mm Starlight Aluminium</div>
+          <div class="product-price">$399</div>
+          <button class="btn-buy" aria-label="Купити">Купити</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/airpods.png" class="product-img" alt="AirPods Max Silver">
+        <div class="product-info">
+          <div class="product-desc">AirPods Max Silver Starlight Aluminium</div>
+          <div class="product-price">$549</div>
+          <button class="btn-buy" aria-label="Купити">Купити</button>
+        </div>
+      </div>
+
+      <!-- row 2 -->
+      <div class="product-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/qwatch.png" class="product-img" alt="Samsung Galaxy Watch6 Classic">
+        <div class="product-info">
+          <div class="product-desc">Samsung Galaxy Watch6 Classic 47mm Black</div>
+          <div class="product-price">$369</div>
+          <button class="btn-buy" aria-label="Купити">Купити</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="images/like2.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/zfold.png" class="product-img" alt="Galaxy Z Fold5 Phantom Black 256GB">
+        <div class="product-info">
+          <div class="product-desc">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</div>
+          <div class="product-price">$1799</div>
+          <button class="btn-buy" aria-label="Купити">Купити</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/buds.png" class="product-img" alt="Galaxy Buds FE Graphite">
+        <div class="product-info">
+          <div class="product-desc">Galaxy Buds FE Graphite</div>
+          <div class="product-price">$99.99</div>
+          <button class="btn-buy" aria-label="Купити">Купити</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/ipad.png" class="product-img" alt="Apple iPad 9 10.2 64GB Wi‑Fi Silver (2021)">
+        <div class="product-info">
+          <div class="product-desc">Apple iPad 9 10.2&quot; 64GB Wi‑Fi Silver (MK2L3) 2021</div>
+          <div class="product-price">$398</div>
+          <button class="btn-buy" aria-label="Купити">Купити</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 5: BIG BANNERS (full-bleed) ===== -->
+  <section class="big-banners" aria-labelledby="promos-title">
+    <h2 id="promos-title" style="position:absolute;left:-9999px;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden;">Промо‑банери</h2>
+
+    <!-- 1 — TWO PHOTOS -->
+    <div class="banner-item banner-1" style="background:#fff;">
+      <img src="images/1.png" alt="Фото товару 1" class="banner-photo photo-1">
+      <img src="images/2.png" alt="Накладене фото товару 2" class="banner-photo photo-2">
+      <div class="banner-text">
+        <div class="banner-title">Популярні товари</div>
+        <div class="banner-desc">iPad поєднує чудовий 10,2‑дюймовий Retina‑дисплей, вражаючу продуктивність, багатозадачність і простоту використання.</div>
+        <button class="btn-shop" aria-label="Купити зараз">Купити зараз</button>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="banner-item banner-2" style="background:#F9F9F9;">
+      <img src="images/3.png" class="banner-img" alt="Рендер iPad Pro">
+      <div class="banner-text">
+        <div class="banner-title">iPad Pro</div>
+        <div class="banner-desc">iPad поєднує чудовий 10,2‑дюймовий Retina‑дисплей, вражаючу продуктивність, багатозадачність і простоту використання.</div>
+        <button class="btn-shop" aria-label="Купити зараз">Купити зараз</button>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="banner-item banner-3" style="background:#EAEAEA;">
+      <img src="images/4.png" class="banner-img" alt="Рендер Samsung Galaxy">
+      <div class="banner-text">
+        <div class="banner-title">Samsung Galaxy</div>
+        <div class="banner-desc">iPad поєднує чудовий 10,2‑дюймовий Retina‑дисплей, вражаючу продуктивність, багатозадачність і простоту використання.</div>
+        <button class="btn-shop" aria-label="Купити зараз">Купити зараз</button>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="banner-item banner-4" style="background:#2C2C2C;">
+      <img src="images/5.png" class="banner-img" alt="Рендер MacBook Pro">
+      <div class="banner-text">
+        <div class="banner-title">MacBook Pro</div>
+        <div class="banner-desc">iPad поєднує чудовий 10,2‑дюймовий Retina‑дисплей, вражаючу продуктивність, багатозадачність і простоту використання.</div>
+        <button class="btn-shop btn-shop--white" aria-label="Купити зараз">Купити зараз</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 6: DISCOUNT PRODUCTS ===== -->
+  <section class="discount-products" aria-labelledby="discounts-title">
+    <h2 id="discounts-title" class="discount-title">Знижки до −50%</h2>
+    <div class="discount-row">
+      <div class="discount-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/iphonn.png" class="product-img" alt="Apple iPhone 14 Pro 512GB Gold">
+        <div class="product-desc">Apple iPhone 14 Pro 512GB Gold (MQ233)</div>
+        <div class="product-price">$1437</div>
+        <button class="btn-buy" aria-label="Купити">Купити</button>
+      </div>
+      <div class="discount-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/airpods.png" class="product-img" alt="AirPods Max Silver">
+        <div class="product-desc">AirPods Max Silver Starlight Aluminium</div>
+        <div class="product-price">$549</div>
+        <button class="btn-buy" aria-label="Купити">Купити</button>
+      </div>
+      <div class="discount-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/applewatch.png" class="product-img" alt="Apple Watch Series 9">
+        <div class="product-desc">Apple Watch Series 9 GPS 41mm Starlight Aluminium</div>
+        <div class="product-price">$399</div>
+        <button class="btn-buy" aria-label="Купити">Купити</button>
+      </div>
+      <div class="discount-card">
+        <img src="images/like.png" class="like-icon" alt="" aria-hidden="true">
+        <img src="images/iphone2_.png" class="product-img" alt="Apple iPhone 14 Pro 1TB Gold">
+        <div class="product-desc">Apple iPhone 14 Pro 1TB Gold (MQ2V3)</div>
+        <div class="product-price">$1499</div>
+        <button class="btn-buy" aria-label="Купити">Купити</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 7: SUMMER SALE ===== -->
+  <section class="sale" aria-labelledby="sale-title">
+    <h2 id="sale-title" style="position:absolute;left:-9999px;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden;">Великий літній розпродаж</h2>
+    <img class="sale-bg" src="images/7.png" alt="Фон великого літнього розпродажу">
+    <div class="sale-content">
+      <p class="sale-title" aria-hidden="true"><span>Великий літній</span> <strong>розпродаж</strong></p>
+      <p class="sale-desc">Commodo fames vitae vitae leo mauris in. Eu consequat.</p>
+      <button class="sale-btn" aria-label="Купити зараз">Купити зараз</button>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 8: FOOTER ===== -->
+  <footer class="footer8">
+    <div class="footer8__inner">
+      <div class="footer8__info">
+        <img src="images/Logo Vector.png" alt="cyber" class="footer8__logo">
+
+        <p class="footer8__text">
+          Ми — студія інтер’єрного дизайну з Портленду.
+          Наш бутик‑студія пропонує більше, ніж просто дизайн.
+        </p>
+
+        <div class="footer8__social">
+          <a class="footer8__s" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+          <a class="footer8__s" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a class="footer8__s" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+          <a class="footer8__s" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer8__sec" aria-labelledby="services-title">
+        <h4 id="services-title" class="footer8__title">Сервіси</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Бонусна програма</a></li>
+          <li><a href="#">Подарункові карти</a></li>
+          <li><a href="#">Кредит і оплата</a></li>
+          <li><a href="#">Сервісні контракти</a></li>
+          <li><a href="#">Безготівковий рахунок</a></li>
+          <li><a href="#">Оплата</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer8__sec" aria-labelledby="assist-title">
+        <h4 id="assist-title" class="footer8__title">Допомога покупцю</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Знайти замовлення</a></li>
+          <li><a href="#">Умови доставки</a></li>
+          <li><a href="#">Обмін і повернення</a></li>
+          <li><a href="#">Гарантія</a></li>
+          <li><a href="#">Поширені запитання</a></li>
+          <li><a href="#">Умови користування сайтом</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,511 @@
+/* ========== RESET / VARS ========== */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --container:1120px;
+  --gap:16px;
+  --black:#000;
+  --white:#fff;
+  --muted:#909090;
+  --card:#F6F6F6;
+}
+body{font-family:'Inter',sans-serif;
+  background:#111;color:#fff;
+  overflow-x: hidden;
+}
+
+/* ========== HEADER ========== */
+header{
+  position:fixed;top:0;left:0;width:100%;height:80px;background:#fff;
+  display:flex;align-items:center;justify-content:space-between;padding:0 40px;
+  z-index:1000;transition:.3s
+}
+header .logo{font-weight:700;font-size:22px;color:#000}
+.nav{display:flex;gap:20px;align-items:center}
+.nav a{text-decoration:none;color:#000;font-size:16px}
+.nav a:hover{color:orange}
+.icons{display:flex;gap:15px}
+.icons a{color:#000;font-size:18px}
+.icons a:hover{color:orange}
+.burger{display:none;cursor:pointer}
+.search{display:flex;align-items:center;gap:6px}
+.search input{padding:6px 10px;border:1px solid #ccc;outline:none}
+.search button{background:orange;border:none;color:#fff;padding:6px 10px;cursor:pointer}
+.desktop-search{display:flex}
+.mobile-search{display:none}
+header.scrolled{background:#3c0069!important}
+header.scrolled .logo,header.scrolled .nav a,header.scrolled .icons a{color:#fff!important}
+header.scrolled .search input{border-color:#fff}
+header.scrolled .search button{background:#fff;color:#3c0069}
+
+/* Burger – видимість/стиль + фокус */
+header .burger{ color:#000; }
+header .burger i{ font-size:24px; line-height:1; }
+header.scrolled .burger{ color:#fff; }
+@media (hover:hover){ header .burger:hover{ opacity:.85; } }
+header .burger:focus-visible{ outline:2px solid #3c0069; outline-offset:2px; }
+
+@media(max-width:768px){
+  .nav{display:none;flex-direction:column;position:absolute;top:80px;left:0;right:0;background:#fff;padding:20px;gap:15px}
+  .nav.active{display:flex}
+  .burger{display:block}
+  .desktop-search{display:none}
+  .mobile-search{display:flex}
+  header.scrolled .nav{background:#3c0069}
+  header.scrolled .mobile-search input{border-color:#fff}
+  header.scrolled .mobile-search button{background:#fff;color:#3c0069}
+}
+
+/* ========== BLOCK 1: HERO ========== */
+.banner{
+  margin-top:80px;display:flex;justify-content:space-between;align-items:center;
+  padding:40px 160px;background:#211C24
+}
+.banner-content{max-width:600px;display:flex;flex-direction:column;gap:24px}
+.subtitle{font-size:25px;font-weight:600;opacity:.4}
+.description{font-size:18px;font-weight:500;opacity:.8}
+.btn{width:191px;height:56px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer}
+.btn:hover{background:#fff;color:#000}
+
+/* Заголовок: "iPhone 14" тонкий, "Pro" жирний */
+.main-title{font-size:96px;line-height:1;white-space:nowrap;font-weight:100;letter-spacing:-0.01em}
+.main-title .mt-thin{font-weight:100}
+.main-title .mt-pro{font-weight:700}
+
+/* Галерея: десктоп — прев’юшки вертикально справа, головне фото торкає низ */
+.banner-image{width:406px;display:flex;flex-direction:row;align-items:center;gap:12px}
+.banner-image .thumbs{display:flex;flex-direction:column;gap:10px}
+.banner-image img#main-img{width:100%;height:auto;max-height:632px;object-fit:contain;align-self:flex-end;margin-bottom:-40px}
+.thumbs{display:flex;gap:10px;margin-top:15px}
+.thumbs img{width:60px;height:90px;object-fit:cover;border:2px solid transparent;cursor:pointer}
+.thumbs img.active{border-color:orange}
+
+@media(max-width:768px){
+  .banner{flex-direction:column;text-align:center;padding:40px 20px}
+  .banner-content{align-items:center}
+  .main-title{font-size:48px;white-space:normal;word-break:break-word}
+  .banner-image{width:100%;max-width:350px;margin-top:20px;flex-direction:column;align-items:center}
+  .banner-image .thumbs{order:-1;flex-direction:row;gap:10px;margin-bottom:12px}
+  .banner-image img#main-img{align-self:center;margin-bottom:-40px;max-width:100%;height:auto}
+}
+
+/* ========== BLOCK 2: SMALL BANNERS (tiles) ========== */
+.product-grid{display:flex;width:100%;gap:0;background:#fff;align-items:stretch;overflow:hidden}
+.left-side,.right-side{flex:1;display:flex;flex-direction:column;gap:0}
+.left-side .product-banner.white{flex:2;min-height:360px}
+.left-side .row{display:flex;gap:0;flex:1}
+.left-side .row .product-banner{flex:1;min-height:180px}
+.right-side .big{display:flex;flex-direction:row;align-items:center;justify-content:space-between;flex:1;min-height:540px}
+
+.product-banner{display:flex;align-items:center;margin:0;background:#333;color:#fff}
+.product-banner img{width:50%;max-height:100%;object-fit:contain;display:block}
+.product-banner .text{padding:20px;flex:1}
+.product-banner h2{font-size:30px;margin-bottom:8px}
+.product-banner p{font-size:14px;color:#ccc;margin:0}
+.white{background:#fff;color:#000}
+.light{background:#EDEDED;color:#000}
+.dark{background:#353535;color:#fff}
+.gray.big{flex-direction:row}
+
+@media(max-width:980px){
+  .product-grid{flex-direction:column}
+  .left-side .product-banner.white,.right-side .big{min-height:320px}
+  .left-side .row .product-banner{min-height:180px}
+}
+
+/* MacBook tile: типографіка MacBook тонкий / Air жирний */
+.right-side .big{background:#EDEDED;color:#000;padding:40px}
+.right-side .big h2{font-size:64px;line-height:1;margin-bottom:20px}
+.right-side .big h2 .macbook{font-weight:100;display:block}
+.right-side .big h2 .air{font-weight:700;display:block;margin-top:10px}
+.right-side .big p{font-size:16px;color:#444;line-height:1.6;max-width:300px}
+
+/* Кнопка чорніє при ховері */
+.right-side .big .btn.black{border:1px solid #000;background:transparent;color:#000;margin-top:20px;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.right-side .big .btn.black:hover{background:#000;color:#fff;border-color:#000}
+
+/* Легкий zoom для зображень (класи додаються JS) */
+.right-side .big .img-wrapper{position:relative}
+.right-side .big .macbook-img,.right-side .big .body{transition:transform .35s ease;transform-origin:85% 90%}
+.right-side .big .macbook-img.zoom{transform:scale(1.04)}
+.right-side .big .body.zoom{transform:scale(1.03)}
+
+/* Зробити MacBook та “body” більшими (фінальні значення) */
+.right-side .big .text{flex:0 0 34%}
+.right-side .big .img-wrapper{
+  position:relative;
+  width:66%;
+  height:560px; 
+  display:flex;align-items:stretch;justify-content:flex-end;
+}
+.right-side .big .macbook-img{
+  position:relative;right:-40px;bottom:-18px;
+  height:230% !important;
+  max-width:none;
+}
+.right-side .big .body{
+  position:absolute;right:-42px;bottom:-26px;
+  width:95%;
+  max-width:none;
+}
+@media (max-width:980px){
+  .right-side .big .text{flex:0 0 40%}
+  .right-side .big .img-wrapper{width:60%; height:480px}
+  .right-side .big .macbook-img{height:135% !important;right:-28px;bottom:-12px}
+  .right-side .big .body{width:90%;right:-30px;bottom:-18px}
+}
+@media (max-width:600px){
+  .right-side .big .img-wrapper{height:360px;width:100%}
+  .right-side .big .macbook-img{right:-18px;bottom:-8px;height:125% !important;}
+  .right-side .big .body{right:-20px;bottom:-12px;width:82%}
+}
+
+/* ========== BLOCK 3: CATEGORY ========== */
+.category{background:#FAFAFA;padding:80px 160px;width:100%;box-sizing:border-box;margin:0}
+.category-inner{width:var(--container);max-width:100%;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+.category-top{width:var(--container);height:32px;display:flex;justify-content:space-between;align-items:center}
+.category-title{font-weight:500;font-size:24px;line-height:32px;color:#000;margin:0}
+.category-arrows{display:flex;gap:16px;align-items:center;justify-content:flex-end}
+.btn-arrow{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:0;cursor:pointer;color:#000;font-size:14px;padding:0}
+.category-cards{display:flex;gap:32px;flex-wrap:wrap;justify-content:flex-start;align-items:center}
+
+.card{width:160px;height:128px;padding:24px 32px;border-radius:15px;background:#EDEDED;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;cursor:pointer;transition:transform .12s ease,box-shadow .2s ease}
+.card-icon img{width:48px;height:48px;object-fit:contain}
+.card-label{font-weight:500;font-size:16px;text-align:center;color:#000}
+/* Фіолетова/лавандова тінь при наведенні */
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:
+    0 12px 28px rgba(60, 0, 105, .35),
+    0 4px 10px rgba(60, 0, 105, .25);
+}
+
+/* ========== BLOCK 4: PRODUCTS ========== */
+.products{background:#fff;padding:44px 0 56px} /* верх трішки менший, як ти хотіла */
+.products .product-tags,
+.products .products-grid{width:var(--container);max-width:calc(100% - 32px);margin:0 auto}
+.product-tags{display:flex;justify-content:flex-start;gap:32px;margin-bottom:24px}
+.product-tags .tag{font-weight:500;font-size:18px;line-height:32px;text-align:center;padding-bottom:4px;cursor:pointer;color:#000}
+.product-tags .selected{border-bottom:2px solid #000}
+.product-tags .normal{color:#8B8B8B}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  align-items:stretch;
+}
+.product-card{
+  background:var(--card);
+  border-radius:12px;
+  padding:24px 16px;
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;
+  height:100%;
+  box-shadow:0 1px 0 #E9E9E9;
+  transition:transform .14s ease,box-shadow .22s ease;
+}
+.product-card .like-icon{position:absolute;top:12px;right:12px;width:24px;height:24px;cursor:pointer}
+.product-card .product-img{width:160px;height:160px;object-fit:contain;margin-bottom:16px}
+.product-card .product-info{width:100%;text-align:center;display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.product-card .product-desc{
+  font-weight:500;font-size:16px;line-height:24px;color:#000;
+  min-height:72px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.product-card .product-price{font-weight:600;font-size:24px;color:#000}
+.product-card .btn-buy{width:100%;padding:12px 0;border-radius:8px;background:#000;color:#fff;border:none;cursor:pointer;margin-top:4px}
+
+/* Фіолетова тінь при наведенні/фокусі */
+.product-card:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 14px 30px rgba(60, 0, 105, .28),
+    0 6px 14px  rgba(60, 0, 105, .18);
+}
+.product-card:focus-within{
+  box-shadow:
+    0 14px 30px rgba(60, 0, 105, .28),
+    0 0 0 1px rgba(60, 0, 105, .35);
+}
+
+@media(max-width:1200px){
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .products{padding-top:40px}
+  .products-grid{grid-template-columns:1fr;gap:24px}
+  .product-tags{justify-content:flex-start;overflow-x:auto}
+}
+
+/* ========== BLOCK 5: BIG BANNERS (FULL-BLEED) ========== */
+.big-banners{
+  width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;height:640px;background:none
+}
+.big-banners .banner-item{
+  position:relative;height:100%;padding:376px 32px 56px 32px;border-radius:0;overflow:hidden
+}
+.big-banners img{max-width:none}
+.big-banners .banner-img{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:360px;height:366px;object-fit:contain;z-index:0;pointer-events:none
+}
+.big-banners .banner-text{position:relative;z-index:1;display:flex;flex-direction:column;gap:16px;max-width:296px}
+.big-banners .banner-title{font-weight:300;font-size:33px;line-height:48px;color:#000}
+.big-banners .banner-desc{font-weight:500;font-size:14px;line-height:24px;color:#909090}
+.big-banners .btn-shop{width:191px;height:56px;padding:16px 56px;border-radius:6px;border:1px solid #000;background:#000;color:#fff;cursor:pointer}
+.banner-4 .banner-title,.banner-4 .banner-desc{color:#fff}
+.btn-shop.btn-shop--white{background:transparent;border-color:#fff;color:#fff}
+
+/* Banner-1: дві фото, під кутом */
+.banner-1 .banner-photo{position:absolute;object-fit:contain;z-index:0;pointer-events:none}
+.banner-1 .photo-1{width:213.477px;height:201.812px;top:22px;left:0;transform:rotate(-30.21deg);filter:drop-shadow(30px 53px 82px rgba(159,159,159,.15))}
+.banner-1 .photo-2{width:164.131px;height:186.309px;top:112.83px;left:117.49px;transform:rotate(119.79deg);filter:drop-shadow(30px 53px 82px rgba(159,159,159,.15))}
+
+@media(max-width:1200px){
+  .big-banners{grid-template-columns:repeat(2,1fr);height:auto}
+  .big-banners .banner-item{min-height:640px}
+}
+@media(max-width:768px){
+  /* загальні центрування для всіх 4 банерів */
+  .big-banners{grid-template-columns:1fr}
+  .big-banners .banner-item{text-align:center;padding-left:20px;padding-right:20px}
+  .big-banners .banner-text{max-width:90%;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .big-banners .btn-shop{margin:0 auto}
+
+  /* 1) Popular Products: дві фотки по центру, під кутами, текст не наїжджає */
+  .banner-1{padding-top:clamp(360px,95vw,560px);padding-bottom:56px}
+  .banner-1 .photo-1,.banner-1 .photo-2{left:50%}
+  .banner-1 .photo-1{top:22px;width:clamp(220px,60vw,380px);transform:translateX(-50%) rotate(-30.21deg)}
+  .banner-1 .photo-2{top:112px;width:clamp(180px,52vw,320px);transform:translateX(-50%) rotate(119.79deg)}
+
+  /* 2) iPad Pro: все по центру, фото зверху, потім текст — без перекриття */
+  .banner-2{
+    padding:32px 24px 56px !important;
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+  }
+  .banner-2 .banner-img{
+    position:static !important;transform:none !important;
+    width:clamp(300px,90vw,560px);height:auto;margin:0 0 20px 0;z-index:0;pointer-events:none;
+  }
+  .banner-2 .banner-text{position:static !important;max-width:min(296px,92vw);z-index:1}
+
+  /* 3) Samsung Galaxy: все по центру */
+  .banner-3{padding-top:clamp(360px,90vw,540px);padding-bottom:56px}
+  .banner-3 .banner-img{left:50%;transform:translateX(-50%);width:clamp(280px,78vw,520px);height:auto}
+
+  /* 4) Macbook Pro: все по центру */
+  .banner-4{padding-top:clamp(360px,90vw,540px);padding-bottom:56px}
+  .banner-4 .banner-img{left:50%;transform:translateX(-50%);width:clamp(280px,78vw,520px);height:auto}
+}
+
+/* ========== BLOCK 6: DISCOUNT PRODUCTS ========== */
+.discount-products{width:100%;padding:80px 0;background:#fff}
+.discount-products .discount-title{width:var(--container);max-width:calc(100% - 32px);margin:0 auto 24px;font-weight:500;font-size:24px;line-height:32px;color:#000;text-align:left}
+.discount-row{width:var(--container);max-width:calc(100% - 32px);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.discount-card{background:var(--card);border-radius:9px;padding:24px 16px;position:relative;display:flex;flex-direction:column;align-items:center}
+.discount-card .like-icon{position:absolute;top:16px;right:16px;width:32px;height:32px;cursor:pointer}
+.discount-card .product-img{width:160px;height:160px;object-fit:contain;margin-bottom:24px}
+.discount-card .product-desc{font-weight:500;font-size:16px;line-height:24px;color:#000;text-align:center;margin-bottom:8px}
+.discount-card .product-price{font-weight:600;font-size:24px;color:#000;text-align:center;margin-bottom:16px}
+.discount-card .btn-buy{width:100%;padding:12px 0;border-radius:8px;background:#000;color:#fff;border:none;cursor:pointer}
+
+@media(max-width:1200px){ .discount-row{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:768px){ .discount-row{grid-template-columns:1fr;gap:24px} }
+
+/* ========== BLOCK 7: SUMMER SALE ========== */
+.sale{
+  position:relative;
+  width:100vw;height:448px;
+  margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
+  overflow:hidden;
+}
+.sale-bg{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;filter:brightness(1.15) contrast(1.02);
+}
+.sale-content{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:553px;max-width:calc(100% - 32px);
+  display:flex;flex-direction:column;gap:40px;align-items:center;text-align:center;color:#fff;
+}
+.sale-title{font-size:72px;line-height:72px;letter-spacing:-0.01em;font-weight:300;color:#fff}
+.sale-title span{font-weight:100}
+.sale-title strong{font-weight:600}
+.sale-desc{font-size:16px;line-height:32px;color:#787878}
+.sale-btn{
+  width:191px;height:56px;padding:16px 56px;border-radius:6px;border:1px solid #fff;background:transparent;color:#fff;
+  font-weight:500;font-size:16px;line-height:24px;cursor:pointer;
+}
+.sale-btn:hover{background:#fff;color:#000}
+
+/* ========== BLOCK 8: FOOTER ========== */
+.footer8{
+  width:100vw;
+  margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
+  background:#000;color:#fff;padding:104px 160px;
+}
+.footer8__inner{
+  width:1120px;max-width:100%;margin:0 auto;
+  display:grid;grid-template-columns:384px 295.5px 295.5px;column-gap:24px;align-items:start;min-height:256px;
+}
+.footer8__info{display:flex;flex-direction:column;gap:24px;min-height:256px}
+.footer8__logo{width:65.4px;height:auto;display:block;object-fit:contain}
+.footer8__text{max-width:384px;color:#CFCFCF;font-weight:500;font-size:14px;line-height:1.71}
+.footer8__social{margin-top:auto;width:173px;height:16px;display:flex;justify-content:space-between;align-items:center}
+.footer8__s{display:inline-block;line-height:0}
+.footer8__s img{width:16px;height:16px;display:block;object-fit:contain}
+.footer8__sec{width:295.5px}
+.footer8__title{margin:0 0 8px 0;font-weight:600;font-size:16px;line-height:16px;color:#fff}
+.footer8__list{list-style:none;padding:0;margin:0}
+.footer8__list li a{display:block;text-decoration:none;color:#CFCFCF;font-weight:400;font-size:14px;line-height:32px}
+.footer8__list li a:hover{color:#fff}
+@media (max-width:1180px){
+  .footer8{padding:80px 24px}
+  .footer8__inner{grid-template-columns:1fr 1fr;row-gap:32px}
+  .footer8__sec{width:auto}
+}
+@media (max-width:700px){
+  .footer8__inner{grid-template-columns:1fr}
+  .footer8__social{width:160px}
+}
+/* ==== MOBILE FIX PACK (<=768px) — вставити в КІНЕЦЬ файлу ==== */
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+
+  /* HEADER */
+  header { padding: 0 16px; }
+  .nav { padding: 16px; gap: 12px; }
+  .nav a { font-size: 16px; }
+
+  /* BLOCK 1: HERO */
+  .banner { padding: 32px 16px; gap: 20px; }
+  .main-title { font-size: 40px; }
+  .banner-image { max-width: 100%; }
+  .banner-image img#main-img { margin-bottom: 0; max-height: 60vh; }
+  .banner-image .thumbs img { width: 48px; height: 70px; }
+
+  /* BLOCK 2: SMALL BANNERS */
+  .product-grid { gap: 0; }
+  .product-banner { flex-direction: column; text-align: center; }
+  .product-banner img { width: 100%; max-height: 220px; }
+  .product-banner .text { padding: 16px; }
+
+  /* MacBook tile — прибираємо абсолюти/жорсткі висоти */
+  .right-side .big { padding: 24px 16px; }
+  .right-side .big .text { flex: unset; width: 100%; }
+  .right-side .big .img-wrapper { width: 100%; height: auto; min-height: 0; }
+  .right-side .big .macbook-img,
+  .right-side .big .body {
+    position: static;          /* було absolute/relative */
+    height: auto !important;   /* було 125–230% */
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+  }
+
+  /* BLOCK 3: CATEGORY */
+  .category { padding: 48px 20px; }
+  .category-cards { gap: 16px; }
+
+  /* BLOCK 4: PRODUCTS */
+  .products { padding: 40px 0; }
+
+  /* BLOCK 5: BIG BANNERS — центр і без overlaps */
+  .big-banners { height: auto; }
+  .big-banners .banner-item { min-height: auto; padding: 32px 16px 48px; }
+  .big-banners .banner-text { max-width: 100%; }
+
+  /* Banner-1 — дві фотки зверху, по центру */
+  .banner-1 { padding-top: 56vw; position: relative; }
+  .banner-1 .photo-1, .banner-1 .photo-2 {
+    left: 50%;
+    transform-origin: center;
+    pointer-events: none;
+  }
+  .banner-1 .photo-1 {
+    transform: translateX(-50%) rotate(-30.21deg);
+    width: 60vw; top: 12px;
+  }
+  .banner-1 .photo-2 {
+    transform: translateX(-50%) rotate(119.79deg);
+    width: 50vw; top: 80px;
+  }
+
+  /* Banner-2 — картинка спочатку, потім текст */
+  .banner-2 {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 32px 16px 48px !important;
+  }
+  .banner-2 .banner-img {
+    position: static !important; transform: none !important;
+    width: 90vw; max-width: 560px; height: auto; margin-bottom: 16px;
+  }
+
+  /* Banner-3/4 — все по центру */
+  .banner-3 .banner-img,
+  .banner-4 .banner-img {
+    left: 50%; transform: translateX(-50%);
+    width: 80vw; max-width: 520px; height: auto;
+  }
+
+  /* BLOCK 6: DISCOUNTS */
+  .discount-products { padding: 56px 0; }
+
+  /* BLOCK 7: SALE */
+  .sale { height: 380px; }
+  .sale-title { font-size: 44px; line-height: 48px; }
+  .sale-content { gap: 24px; }
+
+  /* BLOCK 8: FOOTER */
+  .footer8 { padding: 64px 20px; }
+}
+
+/* додатковий твік для дуже вузьких екранів */
+@media (max-width: 360px) {
+  .main-title { font-size: 34px; }
+  .banner-image .thumbs img { width: 42px; height: 62px; }
+  .sale-title { font-size: 38px; line-height: 42px; }
+}
+/* FIX: прибрати чорну порожнечу збоку на ≥769px */
+@media (min-width: 769px) {
+  html, body { overflow-x: hidden; }
+}
+/* ===== BLOCK 2 — ліве вирівнювання фото для навушників і Vision Pro ===== */
+.product-grid .left-side .row .product-banner.light,
+.product-grid .left-side .row .product-banner.dark{
+  justify-content: flex-start;                 /* елементи починаються зліва */
+}
+
+.product-grid .left-side .row .product-banner.light img,
+.product-grid .left-side .row .product-banner.dark img{
+  object-position: left center;                /* картинка в своєму блоці "дивиться" вліво */
+  margin-left: 0;                              /* без випадкових відступів */
+  /* опційно, якщо хочеш щоб картинка тягнулась по висоті плитки:
+  align-self: stretch;
+  */
+}
+
+.product-grid .left-side .row .product-banner.light .text,
+.product-grid .left-side .row .product-banner.dark .text{
+  padding-left: 20px;                          /* комфортний відступ між фото і текстом */
+}
+/* === BLOCK 5 — mobile: повертаємо правильні відступи для кожного банера === */
+@media (max-width:768px){
+  /* не чіпаємо твої центрування — лише задаємо коректний top padding */
+  .big-banners .banner-item.banner-1{
+    /* дві накладені фотки зверху, треба багато місця */
+    padding: clamp(360px,95vw,560px) 16px 56px !important;
+  }
+  .big-banners .banner-item.banner-2{
+    /* у банера 2 картинка йде в потоці над текстом, вистачає невеликого top */
+    padding: 32px 16px 56px !important;
+  }
+  .big-banners .banner-item.banner-3{
+    /* картинка absolute по центру — даємо місце зверху */
+    padding: clamp(360px,90vw,540px) 16px 56px !important;
+  }
+  .big-banners .banner-item.banner-4{
+    padding: clamp(360px,90vw,540px) 16px 56px !important;
+  }
+}
