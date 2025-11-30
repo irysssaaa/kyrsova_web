@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cyber Store – Кошик</title>
+
+  <!-- Шрифт + іконки -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- СТИЛІ САМЕ ДЛЯ КОШИКА -->
+  <link rel="stylesheet" href="styles/cart.css">
+  <link rel="icon" type="image/png" href="images/cyber-favicon.png">
+
+</head>
+<body>
+
+  <!-- ===== HEADER (такий як на інших сторінках) ===== -->
+  <header id="header" class="header">
+    <div class="logo">cyber</div>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Головна</a>
+      <a href="about.html">Про нас</a>
+      <a href="services.html">Послуги</a>
+      <a href="404.html">Блог</a>
+
+      <!-- Пошук для мобільної версії -->
+      <div class="search mobile-search">
+        <input type="text" placeholder="Пошук...">
+        <button aria-label="Шукати">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Пошук для десктопу -->
+    <div class="search desktop-search">
+      <input type="text" placeholder="Пошук...">
+      <button aria-label="Шукати">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="icons">
+      <a href="#" aria-label="Обране"><i class="fas fa-heart" aria-hidden="true"></i></a>
+      <a href="cart.html" aria-label="Кошик"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Обліковий запис"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="cart-page">
+
+    <section class="cart-section">
+      <div class="cart-inner">
+
+        <!-- ЛІВА ЧАСТИНА: список товарів -->
+        <div class="cart-left">
+          <h1 class="cart-title">Кошик</h1>
+
+          <div class="cart-products">
+
+            <!-- Товар 1: iPhone -->
+            <article class="cart-item" data-price="1399">
+              <div class="cart-item__image">
+                <img src="images/iphone14.png" alt="Apple iPhone 14 Pro Max 128GB Deep Purple">
+              </div>
+
+              <div class="cart-item__content">
+
+                <div class="cart-item__info">
+                  <h2 class="cart-item__name">
+                    Apple iPhone 14 Pro Max 128GB Deep Purple
+                  </h2>
+                  <p class="cart-item__sku">#25139526913984</p>
+                </div>
+
+                <div class="cart-item__right">
+                  <div class="cart-counter">
+                    <button class="counter-btn counter-btn--minus" type="button" aria-label="Зменшити кількість">−</button>
+                    <span class="counter-value">1</span>
+                    <button class="counter-btn counter-btn--plus" type="button" aria-label="Збільшити кількість">+</button>
+                  </div>
+
+                  <div class="cart-item__price">$1399</div>
+
+                  <button class="cart-item__remove" type="button" aria-label="Видалити товар">
+                    ×
+                  </button>
+                </div>
+
+              </div>
+            </article>
+
+            <!-- Товар 2: AirPods -->
+            <article class="cart-item" data-price="549">
+              <div class="cart-item__image">
+                <img src="images/airpods.png" alt="AirPods Max Silver">
+              </div>
+
+              <div class="cart-item__content">
+                <div class="cart-item__info">
+                  <h2 class="cart-item__name">AirPods Max Silver</h2>
+                  <p class="cart-item__sku">#53459358345</p>
+                </div>
+
+                <div class="cart-item__right">
+                  <div class="cart-counter">
+                    <button class="counter-btn counter-btn--minus" type="button" aria-label="Зменшити кількість">−</button>
+                    <span class="counter-value">1</span>
+                    <button class="counter-btn counter-btn--plus" type="button" aria-label="Збільшити кількість">+</button>
+                  </div>
+
+                  <div class="cart-item__price">$549</div>
+
+                  <button class="cart-item__remove" type="button" aria-label="Видалити товар">
+                    ×
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Товар 3: Apple Watch -->
+            <article class="cart-item" data-price="399">
+              <div class="cart-item__image">
+                <img src="images/applewatch.png" alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium">
+              </div>
+
+              <div class="cart-item__content">
+                <div class="cart-item__info">
+                  <h2 class="cart-item__name">
+                    Apple Watch Series 9 GPS 41mm Starlight Aluminium
+                  </h2>
+                  <p class="cart-item__sku">#683632324</p>
+                </div>
+
+                <div class="cart-item__right">
+                  <div class="cart-counter">
+                    <button class="counter-btn counter-btn--minus" type="button" aria-label="Зменшити кількість">−</button>
+                    <span class="counter-value">1</span>
+                    <button class="counter-btn counter-btn--plus" type="button" aria-label="Збільшити кількість">+</button>
+                  </div>
+
+                  <div class="cart-item__price">$399</div>
+
+                  <button class="cart-item__remove" type="button" aria-label="Видалити товар">
+                    ×
+                  </button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ПРАВА ЧАСТИНА: підсумок замовлення -->
+        <aside class="cart-summary">
+          <h2 class="summary-title">Підсумок замовлення</h2>
+
+          <div class="summary-content">
+
+            <!-- Промокод -->
+            <div class="summary-block">
+  <label class="field-label" for="promo-code">Промокод</label>
+  <div class="field field--single">
+    <input id="promo-code" type="text" placeholder="Код">
+  </div>
+  <!-- сюди будемо виводити зелений/червоний текст -->
+  <p id="promo-message" class="promo-message"></p>
+</div>
+
+
+            <!-- Бонусна картка -->
+            <div class="summary-block">
+              <label class="field-label" for="bonus-card">Номер бонусної картки</label>
+              <div class="field field--with-button">
+                <input id="bonus-card" type="text" placeholder="Введіть номер картки">
+                <button class="field-btn" type="button">Застосувати</button>
+              </div>
+            </div>
+
+            <!-- Ціни -->
+            <div class="summary-prices">
+              <div class="summary-row">
+                <span class="summary-row__label">Проміжний підсумок</span>
+                <span class="summary-row__value" id="subtotal">$2347</span>
+              </div>
+
+              <div class="summary-taxes">
+                <div class="summary-row">
+                  <span class="summary-row__label summary-row__label--muted">Орієнтовний податок</span>
+                  <span class="summary-row__value">$50</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-row__label summary-row__label--muted">Орієнтовна доставка та обробка</span>
+                  <span class="summary-row__value">$8.50</span>
+                </div>
+              </div>
+
+              <div class="summary-row summary-row--total">
+                <span class="summary-row__label">Усього</span>
+                <span class="summary-row__value" id="total">$2426</span>
+              </div>
+            </div>
+
+            <!-- Кнопка оформлення = посилання на Step 1 -->
+            <a href="checkout-step1.html" class="summary-checkout">
+              Оформити замовлення
+            </a>
+
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (як на інших сторінках) ===== -->
+  <footer class="footer8">
+    <div class="footer8__inner">
+      <div class="footer8__info">
+        <img src="images/Logo_Vector.png" alt="cyber" class="footer8__logo">
+
+        <p class="footer8__text">
+          Ми — онлайн-магазин сучасної техніки та ґаджетів. Допомагаємо обирати пристрої,
+          які роблять щоденне життя зручнішим, продуктивнішим та яскравішим.
+        </p>
+
+        <div class="footer8__social">
+          <a class="footer8__s" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+          <a class="footer8__s" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a class="footer8__s" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+          <a class="footer8__s" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer8__sec" aria-labelledby="services-title">
+        <h4 id="services-title" class="footer8__title">Сервіси</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Бонусна програма</a></li>
+          <li><a href="#">Подарункові карти</a></li>
+          <li><a href="#">Кредит і оплата</a></li>
+          <li><a href="#">Сервісні контракти</a></li>
+          <li><a href="#">Безготівковий рахунок</a></li>
+          <li><a href="#">Оплата</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer8__sec" aria-labelledby="assist-title">
+        <h4 id="assist-title" class="footer8__title">Допомога покупцю</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Знайти замовлення</a></li>
+          <li><a href="#">Умови доставки</a></li>
+          <li><a href="#">Обмін і повернення</a></li>
+          <li><a href="#">Гарантія</a></li>
+          <li><a href="#">Поширені запитання</a></li>
+          <li><a href="#">Умови користування сайтом</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+		Дидяк Іра, ПІ-22-01&copy;
+<span id='currentYear'></span>, Всі права захищені
+	</div>
+    </div>
+  </footer>
+
+  <!-- JS тільки для кошика -->
+  <script src="scripts/cart.js"></script>
+</body>
+</html>

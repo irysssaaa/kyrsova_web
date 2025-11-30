@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Каталог смартфонів Cyber Store: iPhone та інші бренди з доставкою та гарантією.">
+
+  <title>Cyber Store – Смартфони</title>
+
+  <!-- Шрифти та іконки -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- СТИЛІ ТІЛЬКИ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <link rel="stylesheet" href="styles/products.css">
+  <link rel="icon" type="image/png" href="images/cyber-favicon.png">
+
+</head>
+<body>
+
+  <!-- ===== HEADER (як на головній) ===== -->
+  <header id="header">
+    <div class="logo">cyber</div>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Головна</a>
+      <a href="about.html">Про нас</a>
+      <a href="services.html">Послуги</a>
+      <a href="404.html">Блог</a>
+
+      <!-- Пошук для мобільної версії -->
+      <div class="search mobile-search">
+        <input type="text" placeholder="Пошук...">
+        <button aria-label="Шукати">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Пошук для десктопу -->
+    <div class="search desktop-search">
+      <input type="text" placeholder="Пошук...">
+      <button aria-label="Шукати">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="icons">
+      <a href="#" aria-label="Обране"><i class="fas fa-heart" aria-hidden="true"></i></a>
+      <a href="cart.html" aria-label="Кошик">
+        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+      </a>
+      <a href="#" aria-label="Обліковий запис"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <main class="catalog-page">
+
+    <!-- ===== BREADCRUMBS ===== -->
+    <section class="breadcrumbs" aria-label="Навігаційний ланцюжок">
+      <div class="breadcrumbs-inner">
+        <a href="index.html" class="breadcrumbs-link">Головна</a>
+        <span class="breadcrumbs-separator">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </span>
+        <a href="index.html#catalog-section" class="breadcrumbs-link">Каталог</a>
+        <span class="breadcrumbs-separator">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </span>
+        <span class="breadcrumbs-current">Смартфони</span>
+      </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT: ФІЛЬТРИ + ТОВАРИ ===== -->
+    <div class="catalog-content">
+
+      <!-- === LEFT: FILTERS === -->
+      <aside class="filters" aria-label="Фільтри товарів">
+
+        <!-- Блок "Бренд" – відкритий за замовчуванням -->
+        <div class="filter-group filter-brand is-open">
+          <button class="filter-group__header" type="button">
+            <span class="filter-group__title">Бренд</span>
+            <span class="filter-group__icon" aria-hidden="true">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+
+          <div class="filter-group__body">
+            <!-- Пошук бренду -->
+            <div class="filter-search">
+              <i class="fas fa-search filter-search__icon" aria-hidden="true"></i>
+              <input type="text" class="filter-search__input" placeholder="Пошук бренду">
+            </div>
+
+            <!-- Список брендів -->
+            <div class="brand-list">
+              <label class="checkbox">
+                <input type="checkbox" value="apple" checked>
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  Apple <span class="checkbox__count">110</span>
+                </span>
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" value="samsung">
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  Samsung <span class="checkbox__count">125</span>
+                </span>
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" value="xiaomi">
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  Xiaomi <span class="checkbox__count">68</span>
+                </span>
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" value="poco">
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  Poco <span class="checkbox__count">44</span>
+                </span>
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" value="oppo">
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  OPPO <span class="checkbox__count">36</span>
+                </span>
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" value="honor">
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  Honor <span class="checkbox__count">10</span>
+                </span>
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" value="motorola">
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  Motorola <span class="checkbox__count">34</span>
+                </span>
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" value="nokia">
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  Nokia <span class="checkbox__count">22</span>
+                </span>
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" value="realme">
+                <span class="checkbox__box"></span>
+                <span class="checkbox__label">
+                  Realme <span class="checkbox__count">35</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ЄМНІСТЬ БАТАРЕЇ -->
+        <div class="filter-group">
+          <button class="filter-group__header" type="button">
+            <span class="filter-group__title">Ємність батареї</span>
+            <span class="filter-group__icon" aria-hidden="true">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="filter-group__body">
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">До 3000 мА·год</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">3000 – 4000 мА·год</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">Понад 4000 мА·год</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ТИП ЕКРАНА -->
+        <div class="filter-group">
+          <button class="filter-group__header" type="button">
+            <span class="filter-group__title">Тип екрана</span>
+            <span class="filter-group__icon" aria-hidden="true">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="filter-group__body">
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">IPS</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">AMOLED / OLED</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">LTPO</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ДІАГОНАЛЬ ЕКРАНА -->
+        <div class="filter-group">
+          <button class="filter-group__header" type="button">
+            <span class="filter-group__title">Діагональ екрана</span>
+            <span class="filter-group__icon" aria-hidden="true">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="filter-group__body">
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">До 6"</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">6" – 6.7"</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">Понад 6.7"</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- КЛАС ЗАХИСТУ -->
+        <div class="filter-group">
+          <button class="filter-group__header" type="button">
+            <span class="filter-group__title">Клас захисту</span>
+            <span class="filter-group__icon" aria-hidden="true">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="filter-group__body">
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">Без захисту</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">IP67</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">IP68</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ВБУДОВАНА ПАМ’ЯТЬ -->
+        <div class="filter-group">
+          <button class="filter-group__header" type="button">
+            <span class="filter-group__title">Вбудована пам’ять</span>
+            <span class="filter-group__icon" aria-hidden="true">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <div class="filter-group__body">
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">128 ГБ</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">256 ГБ</span>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox">
+              <span class="checkbox__box"></span>
+              <span class="checkbox__label">512 ГБ та більше</span>
+            </label>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- === RIGHT: PRODUCTS LIST === -->
+      <section class="catalog-products" aria-label="Список смартфонів">
+
+        <!-- Верхня панель -->
+        <div class="catalog-top">
+          <div class="catalog-top__left">
+            <span class="catalog-top__label">Вибрані товари:</span>
+            <span class="catalog-top__count">9</span>
+          </div>
+
+          <div class="catalog-top__sort">
+            <label for="sort-select" class="catalog-top__sort-label">Сортувати:</label>
+            <div class="catalog-top__sort-select">
+              <select id="sort-select" name="sort">
+                <option value="rating">За рейтингом</option>
+                <option value="price-asc">Спочатку дешевші</option>
+                <option value="price-desc">Спочатку дорожчі</option>
+                <option value="new">Новинки</option>
+              </select>
+              <span class="catalog-top__sort-icon" aria-hidden="true">
+                <i class="fas fa-chevron-down"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Сітка товарів -->
+        <div class="catalog-grid">
+
+          <!-- Карточка 1 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="1437"
+                   data-rating="4.9">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/iphonn.png" alt="Apple iPhone 14 Pro 512GB Gold" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 14 Pro 512GB Gold (MQ233)
+              </h3>
+              <div class="catalog-card__price">$1437</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+          <!-- Карточка 2 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="510"
+                   data-rating="4.3">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/14pro1.png" alt="Apple iPhone 11 128GB White" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 11 128GB White
+              </h3>
+              <div class="catalog-card__price">$510</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+          <!-- Карточка 3 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="550"
+                   data-rating="4.4">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/14pro1.png" alt="Apple iPhone 11 128GB White" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 11 128GB White (інша модифікація)
+              </h3>
+              <div class="catalog-card__price">$550</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+          <!-- Карточка 4 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="1499"
+                   data-rating="4.8">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/gold.png" alt="Apple iPhone 14 Pro 1TB Silver (MQ2V3)" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 14 Pro 1TB Silver (MQ2V3)
+              </h3>
+              <div class="catalog-card__price">$1499</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+          <!-- Карточка 5 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="1399"
+                   data-rating="4.7">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/gold2.png" alt="Apple iPhone 14 Pro 1TB Gold (MQ2V3)" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 14 Pro 1TB Gold (MQ2V3)
+              </h3>
+              <div class="catalog-card__price">$1399</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+          <!-- Карточка 6 — ЦІНУ МІНЯЄМО НА 1199 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="1199"
+                   data-rating="4.9">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/iphone14.png" alt="Apple iPhone 14 Pro 128GB Deep Purple" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 14 Pro 128GB Deep Purple
+              </h3>
+              <div class="catalog-card__price">$1199</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+          <!-- Карточка 7 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="850"
+                   data-rating="4.5">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/pink.png" alt="Apple iPhone 13 mini 128GB Pink (MLK23)" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 13 mini 128GB Pink (MLK23)
+              </h3>
+              <div class="catalog-card__price">$850</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+          <!-- Карточка 8 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="1399"
+                   data-rating="4.6">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/black.png" alt="Apple iPhone 14 Pro 256GB Space Black (MQ0T3)" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 14 Pro 256GB Space Black (MQ0T3)
+              </h3>
+              <div class="catalog-card__price">$1399</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+          <!-- Карточка 9 -->
+          <article class="catalog-card"
+                   data-brand="apple"
+                   data-price="1399"
+                   data-rating="4.6">
+            <button class="catalog-card__like" type="button" aria-label="Додати в обране">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+            <a href="product.html" class="catalog-card__image-link">
+              <img src="images/silver.png" alt="Apple iPhone 14 Pro 256GB Silver (MQ0J3)" class="catalog-card__image">
+            </a>
+            <div class="catalog-card__info">
+              <h3 class="catalog-card__title">
+                Apple iPhone 14 Pro 256GB Silver (MQ0J3)
+              </h3>
+              <div class="catalog-card__price">$1399</div>
+              <button class="catalog-card__btn" type="button">Купити</button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Пагінація -->
+        <nav class="pagination" aria-label="Сторінки каталогу">
+          <button class="pagination__arrow" type="button" aria-label="Попередня сторінка">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+
+          <div class="pagination__pages">
+            <button class="pagination__page pagination__page--active" type="button">1</button>
+            <button class="pagination__page" type="button">2</button>
+            <button class="pagination__page" type="button">3</button>
+            <span class="pagination__dots">...</span>
+            <button class="pagination__page" type="button">12</button>
+          </div>
+
+          <button class="pagination__arrow" type="button" aria-label="Наступна сторінка">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </nav>
+
+      </section>
+     </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer8">
+    <div class="footer8__inner">
+      <div class="footer8__info">
+        <img src="images/Logo_Vector.png" alt="cyber" class="footer8__logo">
+
+        <p class="footer8__text">
+          Ми — онлайн-магазин сучасної техніки та ґаджетів. Допомагаємо обирати пристрої, які роблять щоденне життя зручнішим, продуктивнішим та яскравішим.
+        </p>
+
+        <div class="footer8__social">
+          <a class="footer8__s" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+          <a class="footer8__s" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a class="footer8__s" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+          <a class="footer8__s" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer8__sec" aria-labelledby="services-title">
+        <h4 id="services-title" class="footer8__title">Сервіси</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Бонусна програма</a></li>
+          <li><a href="#">Подарункові карти</a></li>
+          <li><a href="#">Кредит і оплата</a></li>
+          <li><a href="#">Сервісні контракти</a></li>
+          <li><a href="#">Безготівковий рахунок</a></li>
+          <li><a href="#">Оплата</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer8__sec" aria-labelledby="assist-title">
+        <h4 id="assist-title" class="footer8__title">Допомога покупцю</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Знайти замовлення</a></li>
+          <li><a href="#">Умови доставки</a></li>
+          <li><a href="#">Обмін і повернення</a></li>
+          <li><a href="#">Гарантія</a></li>
+          <li><a href="#">Поширені запитання</a></li>
+          <li><a href="#">Умови користування сайтом</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+		Дидяк Іра, ПІ-22-01&copy;
+<span id='currentYear'></span>, Всі права захищені
+	</div>
+    </div>
+  </footer>
+
+  <!-- JS ТІЛЬКИ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <script src="scripts/products.js"></script>
+</body>
+</html>

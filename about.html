@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Про нас – Cyber Store</title>
+
+  <!-- Шрифти та іконки -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- СТИЛІ САМЕ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <link rel="stylesheet" href="styles/about.css">
+  <link rel="icon" type="image/png" href="images/cyber-favicon.png">
+</head>
+<body>
+
+  <!-- ===== HEADER (як на інших сторінках) ===== -->
+  <header id="header" class="header">
+    <div class="logo">cyber</div>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Головна</a>
+      <a href="about.html" class="nav__link--active">Про нас</a>
+      <a href="services.html">Послуги</a>
+      <a href="404.html">Блог</a>
+
+      <!-- Пошук для мобільної версії -->
+      <div class="search mobile-search">
+        <input type="text" placeholder="Пошук...">
+        <button aria-label="Шукати">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Пошук для десктопу -->
+    <div class="search desktop-search">
+      <input type="text" placeholder="Пошук...">
+      <button aria-label="Шукати">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="icons">
+      <a href="#" aria-label="Обране"><i class="fas fa-heart" aria-hidden="true"></i></a>
+      <a href="cart.html" aria-label="Кошик"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Обліковий запис"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <main class="about-page">
+
+    <!-- ===== HERO: фіолетовий блок з айфонами ===== -->
+    <section class="about-hero">
+      <!-- неонні плями -->
+      <div class="about-hero__bg-shape about-hero__bg-shape--1"></div>
+      <div class="about-hero__bg-shape about-hero__bg-shape--2"></div>
+
+      <!-- літаючі девайси -->
+      <div class="about-hero__float about-hero__float--iphone">
+        <img src="images/iphone14.png" alt="iPhone">
+      </div>
+      <div class="about-hero__float about-hero__float--macbook">
+        <img src="images/MacBook_Pro_14.png" alt="MacBook">
+      </div>
+      <div class="about-hero__float about-hero__float--airpods">
+        <img src="images/airpods.png" alt="AirPods">
+      </div>
+
+      <div class="about-hero__inner">
+        <div class="about-hero__text reveal reveal--up">
+          <p class="about-hero__eyebrow">онлайн-магазин техніки</p>
+          <h1 class="about-hero__title">
+            Tech, яка<br>підлаштовується<br><span>під тебе</span>
+          </h1>
+          <p class="about-hero__subtitle">
+            CYBER — це коли ти не “просто купуєш телефон”, а збираєш свій сетап:
+            робота, навчання, контент, ігри — все в одному флоу.
+          </p>
+
+          <div class="about-hero__actions">
+            <a href="services.html" class="btn btn--primary">Обрати свій сетап</a>
+            <a href="#about-story" class="btn btn--outline-ghost">Як ми працюємо</a>
+          </div>
+
+          <div class="about-hero__stats">
+            <div class="stat-card">
+              <span class="stat-card__value">10+</span>
+              <span class="stat-card__label">років в техніці</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">3000+</span>
+              <span class="stat-card__label">замовлень на рік</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__value">98%</span>
+              <span class="stat-card__label">відправок за 24 години</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-hero__visual reveal reveal--right">
+          <div class="about-badge">
+            <span class="about-badge__pill">CYBER MODE ON</span>
+            <p class="about-badge__text">
+              Техніка, яка виглядає як Pinterest-мрія і працює як треба.
+            </p>
+          </div>
+
+          <div class="about-hero__card">
+            <p class="about-hero__card-label">Сетап для креаторки</p>
+            <ul class="about-hero__card-list">
+              <li>💻 MacBook для монтажу</li>
+              <li>🎧 Навушники для фокусу</li>
+              <li>📱 iPhone для Reels / TikTok</li>
+              <li>⌚ Watch, щоб не пропустити дедлайни</li>
+            </ul>
+          </div>
+
+          <div class="about-hero__chips">
+            <span class="chip">для студентів</span>
+            <span class="chip">для креаторів</span>
+            <span class="chip">для remote-роботи</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STORY / HOW WE WORK ===== -->
+    <section class="about-story" id="about-story">
+      <div class="about-section__header reveal reveal--up">
+        <h2 class="about-section__title">Як ми підбираємо техніку</h2>
+        <p class="about-section__subtitle">
+          Нас не цікавить “продати подорожче”. Нас цікавить, щоб ноут не лагав,
+          телефон не зливав батарею, а сетап реально закривав твої задачі.
+        </p>
+      </div>
+
+      <div class="about-steps">
+        <article class="step-card reveal reveal--left">
+          <div class="step-card__num">01</div>
+          <h3 class="step-card__title">Слухаємо, чим ти займаєшся</h3>
+          <p class="step-card__text">
+            Робота, навчання, монтаж, дизайн, ігри — кожен сценарій вимагає
+            інший підхід. Ми починаємо з тебе, а не з “акцій”.
+          </p>
+        </article>
+
+        <article class="step-card reveal reveal--up">
+          <div class="step-card__num">02</div>
+          <h3 class="step-card__title">Пропонуємо оптимальний сетап</h3>
+          <p class="step-card__text">
+            Ноут, телефон, навушники, годинник — збираємо комбо, яке працює
+            разом. Без зайвого, але з запасом по потужності.
+          </p>
+        </article>
+
+        <article class="step-card reveal reveal--right">
+          <div class="step-card__num">03</div>
+          <h3 class="step-card__title">Готуємо до старту</h3>
+          <p class="step-card__text">
+            Можемо налаштувати: акаунти, хмару, базові програми. Ти забираєш
+            не “коробку з технікою”, а готовий до роботи інструмент.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE / ІСТОРІЯ ===== -->
+    <section class="about-timeline">
+      <div class="about-section__header reveal reveal--up">
+        <h2 class="about-section__title">Коротко про нашу історію</h2>
+        <p class="about-section__subtitle">
+          Від маленького онлайн-магазину для знайомих до сервісу, де можна
+          зібрати свій ідеальний tech-сетап.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__item reveal reveal--left">
+          <div class="timeline__year">2018</div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Перші замовлення “для своїх”</h3>
+            <p class="timeline__text">
+              Допомагали друзям-айтішникам обирати техніку без переплат. 
+              Тоді й народилася ідея CYBER.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal reveal--up">
+          <div class="timeline__year">2020</div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Сервіси поверх продажу</h3>
+            <p class="timeline__text">
+              Додали налаштування, перенесення даних, консультації перед покупкою та після.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal reveal--right">
+          <div class="timeline__year">2023</div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Сетапи під роль</h3>
+            <p class="timeline__text">
+              Створили готові конфігурації: для креаторів, студентів, дизайнерів,
+              розробників, геймерів.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal reveal--up">
+          <div class="timeline__year">2025</div>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Еко-підхід до оновлення</h3>
+            <p class="timeline__text">
+              Trade-in, викуп старої техніки та утилізація — щоб гаджети не залежувались у шухляді.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VALUES ===== -->
+    <section class="about-values">
+      <div class="about-section__header reveal reveal--up">
+        <h2 class="about-section__title">Наші принципи</h2>
+        <p class="about-section__subtitle">
+          Три речі, які ми не зраджуємо: чесність, адекватні рекомендації та людське ставлення.
+        </p>
+      </div>
+
+      <div class="values-grid">
+        <article class="value-card reveal reveal--left">
+          <h3 class="value-card__title">Прозоро</h3>
+          <p class="value-card__text">
+            Пояснюємо, що реально зміниться від апгрейду. Не зміниться — чесно скажемо.
+          </p>
+        </article>
+
+        <article class="value-card reveal reveal--up">
+          <h3 class="value-card__title">Швидко</h3>
+          <p class="value-card__text">
+            Більшість замовлень — відправка протягом 24 годин. Трекінг — завжди під рукою.
+          </p>
+        </article>
+
+        <article class="value-card reveal reveal--up">
+          <h3 class="value-card__title">Зручно</h3>
+          <p class="value-card__text">
+            Допомагаємо налаштувати девайси, підключити хмару, поставити потрібні додатки.
+          </p>
+        </article>
+
+        <article class="value-card reveal reveal--right">
+          <h3 class="value-card__title">Естетично</h3>
+          <p class="value-card__text">
+            Підбираємо техніку під твій стиль та робочий простір. 
+            Щоб хотілося фоткати свій стіл.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== TEAM з фото ===== -->
+    <section class="about-team">
+      <div class="about-section__header reveal reveal--up">
+        <h2 class="about-section__title">Команда, яка любить техніку</h2>
+        <p class="about-section__subtitle">
+          Ми невелика команда, але з дуже сильним фанатизмом до гаджетів та порядку в техніці.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <article class="team-card reveal reveal--left">
+          <div class="team-card__photo-wrap">
+            <img src="images/katya.jpg" alt="Катя – сетапи для креаторів" class="team-card__photo">
+          </div>
+          <h3 class="team-card__name">Катя</h3>
+          <p class="team-card__role">сетапи для креаторів</p>
+          <p class="team-card__quote">
+            “Обожнюю, коли все — від ноутбука до AirPods — працює як один живий організм.”
+          </p>
+        </article>
+
+        <article class="team-card reveal reveal--up">
+          <div class="team-card__photo-wrap">
+            <img src="images/max.jpg" alt="Макс – Apple-експерт" class="team-card__photo">
+          </div>
+          <h3 class="team-card__name">Макс</h3>
+          <p class="team-card__role">Apple-експерт</p>
+          <p class="team-card__quote">
+            “Мені можна написати з питанням: чи варто міняти твій iPhone на новий? Відповім чесно.”
+          </p>
+        </article>
+
+        <article class="team-card reveal reveal--right">
+          <div class="team-card__photo-wrap">
+            <img src="images/olya.jpg" alt="Оля – упаковка та логістика" class="team-card__photo">
+          </div>
+          <h3 class="team-card__name">Оля</h3>
+          <p class="team-card__role">упаковка та логістика</p>
+          <p class="team-card__quote">
+            “Кожне замовлення пакую так, ніби це подарунок. Бо для когось воно й є подарунком.”
+          </p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer8">
+    <div class="footer8__inner">
+      <div class="footer8__info">
+        <img src="images/Logo_Vector.png" alt="cyber" class="footer8__logo">
+        <p class="footer8__text">
+          Ми — онлайн-магазин сучасної техніки та ґаджетів. Допомагаємо обирати пристрої,
+          які роблять щоденне життя зручнішим, продуктивнішим та яскравішим.
+        </p>
+        <div class="footer8__social">
+          <a class="footer8__s" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+          <a class="footer8__s" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a class="footer8__s" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+          <a class="footer8__s" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer8__sec" aria-labelledby="services-title">
+        <h4 id="services-title" class="footer8__title">Сервіси</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Бонусна програма</a></li>
+          <li><a href="#">Подарункові карти</a></li>
+          <li><a href="#">Кредит і оплата</a></li>
+          <li><a href="#">Сервісні контракти</a></li>
+          <li><a href="#">Безготівковий рахунок</a></li>
+          <li><a href="#">Оплата</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer8__sec" aria-labelledby="assist-title">
+        <h4 id="assist-title" class="footer8__title">Допомога покупцю</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Знайти замовлення</a></li>
+          <li><a href="#">Умови доставки</a></li>
+          <li><a href="#">Обмін і повернення</a></li>
+          <li><a href="#">Гарантія</a></li>
+          <li><a href="#">Поширені запитання</a></li>
+          <li><a href="#">Умови користування сайтом</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+		Дидяк Іра, ПІ-22-01&copy;
+<span id='currentYear'></span>, Всі права захищені
+	</div>
+    </div>
+  </footer>
+
+  <!-- JS тільки для цієї сторінки -->
+  <script src="scripts/about.js"></script>
+</body>
+</html>

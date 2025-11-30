@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Оформлення замовлення – Крок 1: Адреса</title>
+
+  <!-- Шрифт + іконки -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- СТИЛЬ САМЕ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <link rel="stylesheet" href="styles/checkout-step1.css">
+  <link rel="icon" type="image/png" href="images/cyber-favicon.png">
+</head>
+<body>
+
+  <!-- ===== HEADER (такий самий, як на інших сторінках) ===== -->
+  <header id="header" class="header">
+    <div class="logo">cyber</div>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Головна</a>
+      <a href="about.html">Про нас</a>
+      <a href="services.html">Послуги</a>
+      <a href="404.html">Блог</a>
+
+      <!-- Пошук для мобільної версії -->
+      <div class="search mobile-search">
+        <input type="text" placeholder="Пошук...">
+        <button aria-label="Шукати">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Пошук для десктопу -->
+    <div class="search desktop-search">
+      <input type="text" placeholder="Пошук...">
+      <button aria-label="Шукати">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="icons">
+      <a href="#" aria-label="Обране"><i class="fas fa-heart" aria-hidden="true"></i></a>
+      <a href="cart.html" aria-label="Кошик"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Обліковий запис"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <!-- ===== КРОКИ ===== -->
+  <div class="steps">
+    <div class="steps__inner">
+
+      <div class="step step--active">
+        <div class="step__icon">
+          <i class="fas fa-location-dot"></i>
+        </div>
+        <div class="step__text">
+          <span class="step__label">Крок 1</span>
+          <span class="step__title">Адреса</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__icon step__icon--muted">
+          <i class="fas fa-truck"></i>
+        </div>
+        <div class="step__text step__text--muted">
+          <span class="step__label">Крок 2</span>
+          <span class="step__title">Доставка</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__icon step__icon--muted">
+          <i class="fas fa-credit-card"></i>
+        </div>
+        <div class="step__text step__text--muted">
+          <span class="step__label">Крок 3</span>
+          <span class="step__title">Оплата</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== КОНТЕНТ: ВИБІР АДРЕСИ ===== -->
+  <main class="checkout-page">
+    <section class="checkout__content">
+      <div class="checkout__inner">
+
+        <div class="address-block">
+          <h1 class="address-block__title">Оберіть адресу</h1>
+
+          <div class="address-list">
+
+            <!-- Адреса 1 -->
+            <div class="address-card address-card--selected">
+              <div class="address-card__left">
+
+                <div class="address-card__top">
+                  <input class="address-card__radio" type="radio" name="address" checked>
+                  <span class="address-card__name">2118 Thornridge</span>
+                  <span class="address-card__tag" data-tag="home">ДІМ</span>
+                </div>
+
+                <div class="address-card__info">
+                  <p class="address-card__line">
+                    2118 Thornridge Cir. Syracuse, Connecticut 35624
+                  </p>
+                  <p class="address-card__line">
+                    <span class="address-card__contact-label">Контакт:</span>
+                    (209) 555-0104
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="address-card__actions">
+                <button type="button" aria-label="Редагувати адресу" data-action="edit">
+                  <i class="fas fa-pen"></i>
+                </button>
+                <button type="button" aria-label="Видалити адресу" data-action="delete">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Адреса 2 -->
+            <div class="address-card">
+              <div class="address-card__left">
+
+                <div class="address-card__top">
+                  <input class="address-card__radio" type="radio" name="address">
+                  <span class="address-card__name">Headoffice</span>
+                  <span class="address-card__tag address-card__tag--secondary" data-tag="office">ОФІС</span>
+                </div>
+
+                <div class="address-card__info">
+                  <p class="address-card__line">
+                    2715 Ash Dr. San Jose, South Dakota 83475
+                  </p>
+                  <p class="address-card__line">
+                    <span class="address-card__contact-label">Контакт:</span>
+                    (704) 555-0127
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="address-card__actions">
+                <button type="button" aria-label="Редагувати адресу" data-action="edit">
+                  <i class="fas fa-pen"></i>
+                </button>
+                <button type="button" aria-label="Видалити адресу" data-action="delete">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="address-add" type="button">
+            <span class="address-add__icon">+</span>
+            <span class="address-add__text">Додати нову адресу</span>
+          </button>
+        </div>
+
+        <div class="checkout__buttons">
+          <button id="back-btn" class="btn btn--outline" type="button">Назад</button>
+          <button id="next-btn" class="btn btn--primary" type="button">Далі</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== МОДАЛКА ДЛЯ РЕДАГУВАННЯ / ДОДАВАННЯ АДРЕСИ ===== -->
+  <div class="address-modal" id="address-modal" aria-hidden="true">
+    <div class="address-modal__backdrop"></div>
+    <div class="address-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="address-modal-title">
+      <h2 class="address-modal__title" id="address-modal-title">Редагувати адресу</h2>
+
+      <form id="address-form" class="address-form">
+        <div class="address-form__field">
+          <label for="address-name-input">Назва адреси</label>
+          <input id="address-name-input" type="text" placeholder="Наприклад: Дім, Офіс">
+        </div>
+
+        <div class="address-form__field">
+          <label for="address-tag-input">Мітка</label>
+          <select id="address-tag-input">
+            <option value="home">Дім</option>
+            <option value="office">Офіс</option>
+            <option value="other">Інше</option>
+          </select>
+        </div>
+
+        <div class="address-form__field">
+          <label for="address-line-input">Адреса</label>
+          <textarea id="address-line-input" rows="3" placeholder="Вулиця, будинок, квартира, місто"></textarea>
+        </div>
+
+        <div class="address-form__field">
+  <label for="address-phone-input">Телефон</label>
+  <input
+    id="address-phone-input"
+    type="tel"
+    placeholder="+380XXXXXXXXX"
+    inputmode="tel"
+    pattern="\+380[0-9]{9}"
+    maxlength="13"
+  >
+</div>
+
+
+        <div class="address-form__error" id="address-form-error"></div>
+
+        <div class="address-modal__footer">
+          <button type="button" class="btn btn--outline" id="address-cancel-btn">Скасувати</button>
+          <button type="submit" class="btn btn--primary" id="address-save-btn">Зберегти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER (з новою фразою) ===== -->
+  <footer class="footer8">
+    <div class="footer8__inner">
+      <div class="footer8__info">
+        <img src="images/Logo_Vector.png" alt="cyber" class="footer8__logo">
+        <p class="footer8__text">
+          Ми — онлайн-магазин сучасної техніки та ґаджетів. Допомагаємо обирати пристрої, які роблять щоденне життя зручнішим, продуктивнішим та яскравішим.
+        </p>
+        <div class="footer8__social">
+          <a class="footer8__s" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+          <a class="footer8__s" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a class="footer8__s" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+          <a class="footer8__s" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer8__sec" aria-labelledby="services-title">
+        <h4 id="services-title" class="footer8__title">Сервіси</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Бонусна програма</a></li>
+          <li><a href="#">Подарункові карти</a></li>
+          <li><a href="#">Кредит і оплата</a></li>
+          <li><a href="#">Сервісні контракти</a></li>
+          <li><a href="#">Безготівковий рахунок</a></li>
+          <li><a href="#">Оплата</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer8__sec" aria-labelledby="assist-title">
+        <h4 id="assist-title" class="footer8__title">Допомога покупцю</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Знайти замовлення</a></li>
+          <li><a href="#">Умови доставки</a></li>
+          <li><a href="#">Обмін і повернення</a></li>
+          <li><a href="#">Гарантія</a></li>
+          <li><a href="#">Поширені запитання</a></li>
+          <li><a href="#">Умови користування сайтом</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+		Дидяк Іра, ПІ-22-01&copy;
+<span id='currentYear'></span>, Всі права захищені
+	</div>
+    </div>
+  </footer>
+
+  <!-- JS САМЕ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <script src="scripts/checkout-step1.js"></script>
+</body>
+</html>

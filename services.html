@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Послуги – Cyber Store</title>
+
+  <!-- SEO опис -->
+  <meta name="description" content="Послуги Cyber Store: підбір техніки, налаштування, перенесення даних, trade-in та супровід після покупки.">
+
+  <!-- Шрифти та іконки -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- СТИЛІ САМЕ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <link rel="stylesheet" href="styles/services.css">
+  <link rel="icon" type="image/png" href="images/cyber-favicon.png">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="header">
+    <div class="logo">cyber</div>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Головна</a>
+      <a href="about.html">Про нас</a>
+      <a href="services.html" class="nav__link--active">Послуги</a>
+      <a href="404.html">Блог</a>
+
+      <!-- Пошук для мобільної версії -->
+      <div class="search mobile-search">
+        <input type="text" placeholder="Пошук...">
+        <button aria-label="Шукати">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Пошук для десктопу -->
+    <div class="search desktop-search">
+      <input type="text" placeholder="Пошук...">
+      <button aria-label="Шукати">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="icons">
+      <a href="#" aria-label="Обране"><i class="fas fa-heart" aria-hidden="true"></i></a>
+      <a href="cart.html" aria-label="Кошик"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Обліковий запис"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <main class="services-page">
+
+    <!-- ===== HERO ===== -->
+    <section class="services-hero">
+      <div class="services-hero__bg services-hero__bg--left"></div>
+      <div class="services-hero__bg services-hero__bg--right"></div>
+
+      <div class="services-hero__inner">
+        <div class="services-hero__text reveal reveal--left">
+          <p class="services-hero__eyebrow">послуги cyber store</p>
+          <h1 class="services-hero__title">
+            Не просто продати техніку,<br>
+            а <span>налаштувати тобі життя</span>
+          </h1>
+          <p class="services-hero__subtitle">
+            Підбір, налаштування, перенесення даних, trade-in, консультації — щоб усе працювало разом:
+            ноут, телефон, годинник, навушники.
+          </p>
+
+          <div class="services-hero__actions">
+            <a href="#services-grid" class="btn btn--primary">
+              Подивитись послуги
+            </a>
+            <a href="#services-flow" class="btn btn--outline-ghost">
+              Як це працює
+            </a>
+          </div>
+
+          <ul class="services-hero__bullets">
+            <li><i class="fas fa-check"></i> Пояснюємо людською мовою, без “гігагерців” в очі</li>
+            <li><i class="fas fa-check"></i> Підбираємо під твої задачі, а не під цінник</li>
+            <li><i class="fas fa-check"></i> Додаємо естетику: щоб сетапом хотілося хвалитись</li>
+          </ul>
+        </div>
+
+        <div class="services-hero__visual reveal reveal--right">
+          <div class="services-stack-card">
+            <p class="services-stack-card__label">Приклад сетапу</p>
+            <div class="services-stack-card__items">
+              <div class="stack-item">
+                <span class="stack-item__icon"><i class="fas fa-laptop"></i></span>
+                <div class="stack-item__text">
+                  <span class="stack-item__title">MacBook для роботи</span>
+                  <span class="stack-item__subtitle">дизайн / код / монтаж</span>
+                </div>
+              </div>
+              <div class="stack-item">
+                <span class="stack-item__icon"><i class="fas fa-mobile-alt"></i></span>
+                <div class="stack-item__text">
+                  <span class="stack-item__title">iPhone для контенту</span>
+                  <span class="stack-item__subtitle">камера, соцмережі, banking</span>
+                </div>
+              </div>
+              <div class="stack-item">
+                <span class="stack-item__icon"><i class="fas fa-headphones"></i></span>
+                <div class="stack-item__text">
+                  <span class="stack-item__title">Навушники</span>
+                  <span class="stack-item__subtitle">щоб не чути сусідів з перфоратором</span>
+                </div>
+              </div>
+              <div class="stack-item">
+                <span class="stack-item__icon"><i class="fas fa-clock"></i></span>
+                <div class="stack-item__text">
+                  <span class="stack-item__title">Годинник</span>
+                  <span class="stack-item__subtitle">нагадує про дедлайни і воду</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="services-tag-cloud">
+            <span class="tag">налаштування</span>
+            <span class="tag">перенесення даних</span>
+            <span class="tag">підбір техніки</span>
+            <span class="tag">trade-in</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GRID З ПОСЛУГАМИ (динамічний контент) ===== -->
+    <section class="services-section" id="services-grid">
+      <div class="section-header reveal reveal--up">
+        <h2 class="section-header__title">Що ми можемо зробити для тебе</h2>
+        <p class="section-header__subtitle">
+          Можеш замовити одну послугу, а можеш — повний супровід: від вибору девайса до перенесення всіх
+          фоток з минулого життя.
+        </p>
+      </div>
+
+      <!-- Сюди JS вставляє <article class="service-card">... -->
+      <div class="services-grid js-services-grid">
+        <!-- порожньо, наповнюється з services.json -->
+      </div>
+    </section>
+
+    <!-- ===== ЯК ВІДБУВАЄТЬСЯ СПІВПРАЦЯ ===== -->
+    <section class="services-flow" id="services-flow">
+      <div class="section-header reveal reveal--up">
+        <h2 class="section-header__title">Як усе відбувається</h2>
+        <p class="section-header__subtitle">
+          Мінімум бюрократії, максимум зрозумілих кроків. Ти завжди розумієш, що відбувається з твоїм замовленням і технікою.
+        </p>
+      </div>
+
+      <div class="flow-steps">
+        <article class="flow-card reveal reveal--left">
+          <div class="flow-card__step">Крок 1</div>
+          <h3 class="flow-card__title">Пишеш нам, що тобі потрібно</h3>
+          <p class="flow-card__text">
+            “Потрібен ноут для монтажу”, “Хочу оновити телефон”, “Хочу фул Apple-сетап” — цього достатньо, щоб стартувати.
+          </p>
+          <p class="flow-card__hint">Можна просто накинути голосове / скріни — ми розберемо.</p>
+        </article>
+
+        <article class="flow-card reveal reveal--up">
+          <div class="flow-card__step">Крок 2</div>
+          <h3 class="flow-card__title">Пропонуємо варіанти і бюджет</h3>
+          <p class="flow-card__text">
+            Надсилаємо 1–3 варіанти з поясненнями: що краще під твої задачі, де є запас, а де можна не переплачувати.
+          </p>
+          <p class="flow-card__hint">Все в одному місці: посилання, характеристики, коментарі українською.</p>
+        </article>
+
+        <article class="flow-card reveal reveal--right">
+          <div class="flow-card__step">Крок 3</div>
+          <h3 class="flow-card__title">Купуємо, налаштовуємо, доставляємо</h3>
+          <p class="flow-card__text">
+            Узгоджуємо фінал, оформлюємо замовлення, налаштовуємо девайси (якщо потрібно) і відправляємо тобі.
+          </p>
+          <p class="flow-card__hint">Трекінг, інструкції та підтримка — в одному діалозі.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== ПАКЕТИ / ТАРИФИ ===== -->
+    <section class="services-plans">
+      <div class="section-header reveal reveal--up">
+        <h2 class="section-header__title">Можна по-простому, а можна — як у кіно</h2>
+        <p class="section-header__subtitle">
+          Обери формат, який тобі зараз ближче. Завжди можна почати з базового, а потім докинути послуги.
+        </p>
+      </div>
+
+      <div class="plans-grid">
+        <article class="plan-card reveal reveal--left">
+          <p class="plan-card__badge">Базово</p>
+          <h3 class="plan-card__title">“Просто допоможіть обрати”</h3>
+          <p class="plan-card__price">від 0 грн</p>
+          <ul class="plan-card__list">
+            <li>Консультація по вибору девайса</li>
+            <li>1–2 варіанти техніки</li>
+            <li>Коротке пояснення + відповіді на питання</li>
+          </ul>
+          <a class="plan-card__btn"
+   href="https://t.me/irysssaaa"
+   target="_blank"
+   rel="noopener">
+  Хочу базову консультацію
+</a>
+        </article>
+
+        <article class="plan-card plan-card--highlight reveal reveal--up">
+          <p class="plan-card__badge plan-card__badge--accent">Популярно</p>
+          <h3 class="plan-card__title">“Зробіть усе за мене”</h3>
+          <p class="plan-card__price">від 1499 грн</p>
+          <ul class="plan-card__list">
+            <li>Підбір повного сетапу</li>
+            <li>Налаштування девайсів</li>
+            <li>Перенесення даних</li>
+            <li>Короткий відео-гайд або інструкція</li>
+          </ul>
+          <a class="plan-card__btn plan-card__btn--primary"
+   href="https://t.me/irysssaaa"
+   target="_blank"
+   rel="noopener">
+  Хочу фул супровід
+</a>
+        </article>
+
+        <article class="plan-card reveal reveal--right">
+          <p class="plan-card__badge">Для своїх</p>
+          <h3 class="plan-card__title">“Мій особистий tech-консультант”</h3>
+          <p class="plan-card__price">індивідуально</p>
+          <ul class="plan-card__list">
+            <li>Супровід протягом місяця / кварталу</li>
+            <li>Рекомендації по оновленням</li>
+            <li>Пріоритетні відповіді у месенджері</li>
+          </ul>
+          <a class="plan-card__btn"
+   href="https://t.me/irysssaaa"
+   target="_blank"
+   rel="noopener">
+  Обговорити формат
+</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="services-faq">
+  <div class="section-header reveal reveal--up">
+    <h2 class="section-header__title">Питання, які нам часто пишуть</h2>
+    <p class="section-header__subtitle">
+      Якщо тут немає твого питання — це знак написати нам і спитати напряму 🫶
+    </p>
+  </div>
+
+  <!-- FAQ буде будуватися через JS з faq.json -->
+  <div class="faq-list js-faq-list">
+    <!-- динамічний контент -->
+  </div>
+</section>
+
+    <!-- ===== CTA ===== -->
+    <section class="services-cta">
+      <div class="services-cta__inner reveal reveal--up">
+        <div class="services-cta__text">
+          <h2>Хочеш, щоб техніка працювала, а не дратувала?</h2>
+          <p>
+            Напиши нам свої задачі, бюджет і що вже маєш. Ми підкажемо, що докупити, що продати
+            і як з цього всього зібрати ідеальний сетап.
+          </p>
+        </div>
+        <div class="services-cta__actions">
+          <a href="https://t.me/irysssaaa" target="_blank" rel="noopener" class="btn btn--primary">
+            Написати нам в Telegram
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== МОДАЛКА ДЛЯ КОНСУЛЬТАЦІЙ ===== -->
+  <div class="consult-modal" id="consult-modal" aria-hidden="true">
+    <div class="consult-modal__overlay"></div>
+    <div class="consult-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="consult-modal-title">
+      <button type="button" class="consult-modal__close" aria-label="Закрити вікно">
+        <span>&times;</span>
+      </button>
+      <h2 id="consult-modal-title" class="consult-modal__title">
+        Привіт! З тобою консультант Іра 💬
+      </h2>
+      <p class="consult-modal__text">
+        Напиши мені в Telegram кількома реченнями:
+      </p>
+      <ul class="consult-modal__list">
+        <li>чим займаєшся (робота / навчання / контент / ігри);</li>
+        <li>який у тебе бюджет орієнтовно;</li>
+        <li>чи є вже якась техніка (ноут / телефон / планшет).</li>
+      </ul>
+      <p class="consult-modal__text">
+        Я підкажу, що краще обрати саме під тебе — без “зайвого” та з нормальним поясненням 💜
+      </p>
+
+      <a href="https://t.me/irysssaaa" target="_blank" rel="noopener"
+         class="btn btn--primary consult-modal__btn">
+        Написати Ірі в Telegram
+      </a>
+
+      <p class="consult-modal__note">
+        Або знайди мене за ніком <strong>@irysssaaa</strong> прямо в Telegram.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer8">
+    <div class="footer8__inner">
+      <div class="footer8__info">
+        <img src="images/Logo_Vector.png" alt="cyber" class="footer8__logo">
+        <p class="footer8__text">
+          Ми — онлайн-магазин сучасної техніки та ґаджетів. Допомагаємо обирати пристрої,
+          які роблять щоденне життя зручнішим, продуктивнішим та яскравішим.
+        </p>
+        <div class="footer8__social">
+          <a class="footer8__s" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+          <a class="footer8__s" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a class="footer8__s" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+          <a class="footer8__s" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer8__sec" aria-labelledby="services-title">
+        <h4 id="services-title" class="footer8__title">Сервіси</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Бонусна програма</a></li>
+          <li><a href="#">Подарункові карти</a></li>
+          <li><a href="#">Кредит і оплата</a></li>
+          <li><a href="#">Сервісні контракти</a></li>
+          <li><a href="#">Безготівковий рахунок</a></li>
+          <li><a href="#">Оплата</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer8__sec" aria-labelledby="assist-title">
+        <h4 id="assist-title" class="footer8__title">Допомога покупцю</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Знайти замовлення</a></li>
+          <li><a href="#">Умови доставки</a></li>
+          <li><a href="#">Обмін і повернення</a></li>
+          <li><a href="#">Гарантія</a></li>
+          <li><a href="#">Поширені запитання</a></li>
+          <li><a href="#">Умови користування сайтом</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+		Дидяк Іра, ПІ-22-01&copy;
+<span id='currentYear'></span>, Всі права захищені
+	</div>
+    </div>
+  </footer>
+
+  <!-- JS тільки для цієї сторінки -->
+  <script src="scripts/services.js"></script>
+</body>
+</html>

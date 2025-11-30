@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cyber Store – Оплата</title>
+
+  <!-- Шрифти та іконки -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- СТИЛІ САМЕ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <link rel="stylesheet" href="styles/checkout-step3.css">
+  <link rel="icon" type="image/png" href="images/cyber-favicon.png">
+</head>
+<body>
+
+  <!-- ===== HEADER (такий як усюди) ===== -->
+  <header id="header" class="header">
+    <div class="logo">cyber</div>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Головна</a>
+      <a href="about.html">Про нас</a>
+      <a href="services.html">Послуги</a>
+      <a href="404.html">Блог</a>
+
+      <!-- Пошук для мобільної версії -->
+      <div class="search mobile-search">
+        <input type="text" placeholder="Пошук...">
+        <button aria-label="Шукати">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Пошук для десктопу -->
+    <div class="search desktop-search">
+      <input type="text" placeholder="Пошук...">
+      <button aria-label="Шукати">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="icons">
+      <a href="#" aria-label="Обране"><i class="fas fa-heart" aria-hidden="true"></i></a>
+      <a href="cart.html" aria-label="Кошик"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Обліковий запис"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <main class="checkout-page">
+
+    <!-- ===== STEPS ===== -->
+    <div class="checkout-steps">
+      <div class="checkout-steps__inner">
+
+        <div class="checkout-step checkout-step--muted">
+          <div class="checkout-step__icon">
+            <i class="fas fa-location-dot" aria-hidden="true"></i>
+          </div>
+          <div class="checkout-step__text">
+            <span class="checkout-step__label">Крок 1</span>
+            <span class="checkout-step__title">Адреса</span>
+          </div>
+        </div>
+
+        <div class="checkout-step checkout-step--muted">
+          <div class="checkout-step__icon">
+            <i class="fas fa-truck" aria-hidden="true"></i>
+          </div>
+          <div class="checkout-step__text">
+            <span class="checkout-step__label">Крок 2</span>
+            <span class="checkout-step__title">Доставка</span>
+          </div>
+        </div>
+
+        <div class="checkout-step checkout-step--active">
+          <div class="checkout-step__icon">
+            <i class="fas fa-credit-card" aria-hidden="true"></i>
+          </div>
+          <div class="checkout-step__text">
+            <span class="checkout-step__label">Крок 3</span>
+            <span class="checkout-step__title">Оплата</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== CONTENT: SUMMARY + PAYMENT ===== -->
+    <div class="checkout-content">
+      <div class="checkout-grid">
+
+        <!-- ЛІВА КОЛОНКА: ПІДСУМОК -->
+        <aside class="summary">
+          <h2 class="summary__title">Підсумок замовлення</h2>
+
+          <!-- Товари (динамічно підтягуються з localStorage) -->
+          <div class="summary-products" id="summary-products">
+            <!-- JS заповнить -->
+          </div>
+
+          <!-- Деталі доставки + ціни -->
+          <div class="summary-details">
+
+            <div class="summary-group">
+              <p class="summary-group__label">Адреса доставки</p>
+              <div class="summary-group__field" id="summary-address">
+                (адреса буде підставлена з Кроку 1)
+              </div>
+            </div>
+
+            <div class="summary-group">
+              <p class="summary-group__label">Спосіб доставки</p>
+              <div class="summary-group__field" id="summary-shipping-method">
+                (метод буде підставлений з Кроку 2)
+              </div>
+            </div>
+
+            <div class="summary-prices">
+              <div class="summary-line">
+                <span class="summary-line__label">Проміжний підсумок</span>
+                <span class="summary-line__value" id="summary-subtotal">$0</span>
+              </div>
+
+              <div class="summary-line summary-line--discount" id="summary-discount-row" style="display:none;">
+                <span class="summary-line__label">Знижка</span>
+                <span class="summary-line__value" id="summary-discount">−$0</span>
+              </div>
+
+              <div class="summary-line">
+                <span class="summary-line__label">Орієнтовний податок</span>
+                <span class="summary-line__value" id="summary-tax">$0</span>
+              </div>
+
+              <div class="summary-line">
+                <span class="summary-line__label">Доставка та обробка</span>
+                <span class="summary-line__value" id="summary-shipping">$0</span>
+              </div>
+
+              <div class="summary-line summary-line--total">
+                <span class="summary-line__label">Усього</span>
+                <span class="summary-line__value" id="summary-total">$0</span>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+
+        <!-- ПРАВА КОЛОНКА: ОПЛАТА -->
+        <section class="payment">
+          <div class="payment-top">
+            <h2 class="payment-title">Оплата</h2>
+
+            <div class="payment-tabs" role="tablist">
+              <button class="payment-tab payment-tab--active" type="button" role="tab" aria-selected="true" data-method="card">
+                Кредитна картка
+              </button>
+              <button class="payment-tab" type="button" role="tab" aria-selected="false" data-method="paypal">
+                PayPal
+              </button>
+              <button class="payment-tab" type="button" role="tab" aria-selected="false" data-method="paypal-credit">
+                PayPal Credit
+              </button>
+            </div>
+          </div>
+
+          <div class="payment-body">
+
+            <!-- Візуал картки -->
+            <div class="payment-card-visual" id="payment-card-visual">
+              <img src="images/mono.png" alt="Банківська картка">
+            </div>
+
+            <!-- Форма оплати -->
+            <form class="payment-form" id="payment-form" action="#" method="post">
+              <!-- Поля для картки -->
+              <div class="payment-card-fields" id="payment-card-fields">
+                <div class="payment-field">
+                  <input type="text" name="cardholder" id="cardholder" placeholder="Ім’я власника картки" required>
+                </div>
+
+                <div class="payment-field">
+                  <input type="text" name="cardnumber" id="cardnumber" placeholder="Номер картки" required>
+                </div>
+
+                <div class="payment-row">
+                  <div class="payment-field">
+                    <input type="text" name="expdate" id="expdate" placeholder="Термін дії (MM/YY)" required>
+                  </div>
+                  <div class="payment-field">
+                    <input type="text" name="cvv" id="cvv" placeholder="CVV" required>
+                  </div>
+                </div>
+
+                <label class="payment-checkbox">
+                  <input type="checkbox" name="same_address" checked>
+                  <span>Використати ту саму адресу для виставлення рахунку</span>
+                </label>
+              </div>
+
+              <!-- Блок для PayPal / PayPal Credit -->
+              <div class="payment-alt" id="payment-alt" hidden>
+                <p class="payment-alt__text">
+                  Після підтвердження замовлення ми перенаправимо вас на
+                  <span id="payment-alt-name">PayPal</span> для завершення оплати.
+                </p>
+              </div>
+
+              <div class="payment-buttons">
+                <a href="checkout-step2.html" class="btn-outline">Назад</a>
+                <button class="btn-primary" type="submit">Сплатити</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer8">
+    <div class="footer8__inner">
+      <div class="footer8__info">
+        <img src="images/Logo_Vector.png" alt="cyber" class="footer8__logo">
+
+        <p class="footer8__text">
+          Ми — онлайн-магазин сучасної техніки та ґаджетів. Допомагаємо обирати пристрої, які роблять
+          щоденне життя зручнішим, продуктивнішим та яскравішим.
+        </p>
+
+        <div class="footer8__social">
+          <a class="footer8__s" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+          <a class="footer8__s" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a class="footer8__s" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+          <a class="footer8__s" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer8__sec" aria-labelledby="services-title">
+        <h4 id="services-title" class="footer8__title">Сервіси</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Бонусна програма</a></li>
+          <li><a href="#">Подарункові карти</a></li>
+          <li><a href="#">Кредит і оплата</a></li>
+          <li><a href="#">Сервісні контракти</a></li>
+          <li><a href="#">Безготівковий рахунок</a></li>
+          <li><a href="#">Оплата</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer8__sec" aria-labelledby="assist-title">
+        <h4 id="assist-title" class="footer8__title">Допомога покупцю</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Знайти замовлення</a></li>
+          <li><a href="#">Умови доставки</a></li>
+          <li><a href="#">Обмін і повернення</a></li>
+          <li><a href="#">Гарантія</a></li>
+          <li><a href="#">Поширені запитання</a></li>
+          <li><a href="#">Умови користування сайтом</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+		Дидяк Іра, ПІ-22-01&copy;
+<span id='currentYear'></span>, Всі права захищені
+	</div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="scripts/checkout-step3.js"></script>
+</body>
+</html>

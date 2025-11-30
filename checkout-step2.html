@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Оформлення замовлення – Крок 2: Доставка</title>
+
+  <!-- Шрифти та іконки -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- СТИЛІ САМЕ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <link rel="stylesheet" href="styles/checkout-step2.css">
+  <link rel="icon" type="image/png" href="images/cyber-favicon.png">
+</head>
+<body>
+
+  <!-- ===== HEADER (як на інших сторінках) ===== -->
+  <header id="header" class="header">
+    <div class="logo">cyber</div>
+
+    <nav class="nav" id="nav">
+      <a href="index.html">Головна</a>
+      <a href="about.html">Про нас</a>
+      <a href="services.html">Послуги</a>
+      <a href="404.html">Блог</a>
+
+      <!-- мобільний пошук -->
+      <div class="search mobile-search">
+        <input type="text" placeholder="Пошук...">
+        <button aria-label="Шукати">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- десктоп-пошук -->
+    <div class="search desktop-search">
+      <input type="text" placeholder="Пошук...">
+      <button aria-label="Шукати">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="icons">
+      <a href="#" aria-label="Обране"><i class="fas fa-heart" aria-hidden="true"></i></a>
+      <a href="cart.html" aria-label="Кошик"><i class="fas fa-shopping-cart" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Обліковий запис"><i class="fas fa-user" aria-hidden="true"></i></a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Меню">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="checkout-page">
+
+    <!-- КРОКИ -->
+    <div class="checkout-steps">
+      <div class="checkout-steps__inner">
+
+        <!-- Крок 1 (сірий) -->
+        <div class="checkout-steps__step checkout-steps__step--muted">
+          <div class="checkout-steps__icon">
+            <i class="fas fa-location-dot" aria-hidden="true"></i>
+          </div>
+          <div class="checkout-steps__text">
+            <span class="checkout-steps__label">Крок 1</span>
+            <span class="checkout-steps__title">Адреса</span>
+          </div>
+        </div>
+
+        <!-- Крок 2 (активний, чорний) -->
+        <div class="checkout-steps__step checkout-steps__step--active">
+          <div class="checkout-steps__icon checkout-steps__icon--active">
+            <i class="fas fa-truck" aria-hidden="true"></i>
+          </div>
+          <div class="checkout-steps__text">
+            <span class="checkout-steps__label">Крок 2</span>
+            <span class="checkout-steps__title">Доставка</span>
+          </div>
+        </div>
+
+        <!-- Крок 3 (сірий) -->
+        <div class="checkout-steps__step checkout-steps__step--muted">
+          <div class="checkout-steps__icon">
+            <i class="fas fa-credit-card" aria-hidden="true"></i>
+          </div>
+          <div class="checkout-steps__text">
+            <span class="checkout-steps__label">Крок 3</span>
+            <span class="checkout-steps__title">Оплата</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- КОНТЕНТ КРОКУ 2 -->
+    <section class="checkout-content">
+      <div class="checkout-content__inner">
+
+        <div class="shipping-block">
+          <h1 class="shipping-title">Метод доставки</h1>
+
+          <div class="shipping-methods">
+
+            <!-- Метод 1 -->
+            <div class="shipping-method shipping-method--active">
+              <div class="shipping-method__left">
+                <span class="shipping-radio">
+                  <input type="radio" name="shipping" value="regular" checked>
+                  <span class="shipping-radio__custom"></span>
+                </span>
+
+                <div class="shipping-method__text">
+                  <div class="shipping-method__row">
+                    <span class="shipping-price">Безкоштовно</span>
+                    <span class="shipping-main">Звичайна доставка</span>
+                  </div>
+                  <p class="shipping-desc">
+                    Стандартна доставка у звичайному режимі.
+                  </p>
+                </div>
+              </div>
+
+              <div class="shipping-method__right">
+                <span class="shipping-date">15 грудня 2025&nbsp;року</span>
+              </div>
+            </div>
+
+            <!-- Метод 2 -->
+            <div class="shipping-method">
+              <div class="shipping-method__left">
+                <span class="shipping-radio">
+                  <input type="radio" name="shipping" value="express">
+                  <span class="shipping-radio__custom"></span>
+                </span>
+
+                <div class="shipping-method__text">
+                  <div class="shipping-method__row">
+                    <span class="shipping-price">$8.50</span>
+                    <span class="shipping-main">Доставка якнайшвидше</span>
+                  </div>
+                  <p class="shipping-desc">
+                    Отримайте замовлення у найкоротший можливий термін.
+                  </p>
+                </div>
+              </div>
+
+              <div class="shipping-method__right">
+                <span class="shipping-date">7 грудня 2025&nbsp;року</span>
+              </div>
+            </div>
+
+            <!-- Метод 3 -->
+           <div class="shipping-method">
+              <div class="shipping-method__left">
+                <span class="shipping-radio">
+                  <input type="radio" name="shipping" value="scheduled">
+                  <span class="shipping-radio__custom"></span>
+                </span>
+
+                <div class="shipping-method__text">
+                  <div class="shipping-method__row">
+                    <span class="shipping-price">За розкладом</span>
+                    <span class="shipping-main">Запланована доставка</span>
+                  </div>
+                  <p class="shipping-desc">
+                    Оберіть зручний день — ми підлаштуємо доставку під ваш графік.
+                  </p>
+                </div>
+              </div>
+
+              <div class="shipping-method__right shipping-method__right--column">
+                <label class="shipping-date-label" for="scheduled-date">
+                  Обрати дату
+                  <input type="date" id="scheduled-date" class="shipping-date-input">
+                </label>
+                <p class="shipping-date-hint">
+                  Доступні дати починаються з
+                  <span id="scheduled-min-label"></span>.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="checkout-buttons">
+          <a href="checkout-step1.html" class="btn-outline">Назад</a>
+          <a href="checkout-step3.html" class="btn-primary">Далі</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer8">
+    <div class="footer8__inner">
+      <div class="footer8__info">
+        <img src="images/Logo_Vector.png" alt="cyber" class="footer8__logo">
+
+        <p class="footer8__text">
+          Ми — онлайн-магазин сучасної техніки та ґаджетів. Допомагаємо обирати пристрої, які роблять щоденне життя зручнішим, продуктивнішим та яскравішим.
+        </p>
+
+        <div class="footer8__social">
+          <a class="footer8__s" href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter">
+          </a>
+          <a class="footer8__s" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook">
+          </a>
+          <a class="footer8__s" href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+            <img src="images/tiktok.png" alt="TikTok">
+          </a>
+          <a class="footer8__s" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer8__sec" aria-labelledby="services-title">
+        <h4 id="services-title" class="footer8__title">Сервіси</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Бонусна програма</a></li>
+          <li><a href="#">Подарункові карти</a></li>
+          <li><a href="#">Кредит і оплата</a></li>
+          <li><a href="#">Сервісні контракти</a></li>
+          <li><a href="#">Безготівковий рахунок</a></li>
+          <li><a href="#">Оплата</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer8__sec" aria-labelledby="assist-title">
+        <h4 id="assist-title" class="footer8__title">Допомога покупцю</h4>
+        <ul class="footer8__list">
+          <li><a href="#">Знайти замовлення</a></li>
+          <li><a href="#">Умови доставки</a></li>
+          <li><a href="#">Обмін і повернення</a></li>
+          <li><a href="#">Гарантія</a></li>
+          <li><a href="#">Поширені запитання</a></li>
+          <li><a href="#">Умови користування сайтом</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+		Дидяк Іра, ПІ-22-01&copy;
+<span id='currentYear'></span>, Всі права захищені
+	</div>
+    </div>
+  </footer>
+
+  <!-- JS САМЕ ДЛЯ ЦІЄЇ СТОРІНКИ -->
+  <script src="scripts/checkout-step2.js"></script>
+</body>
+</html>

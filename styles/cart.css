@@ -1,0 +1,649 @@
+/* ========== RESET ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --container: 1120px;
+  --gap: 48px;
+  --black: #000000;
+  --white: #ffffff;
+  --muted: #545454;
+  --border-light: #ebebeb;
+  --border-gray: #d9d9d9;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+/* ========== HEADER (mobile first) ========== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #ffffff;
+  border-bottom: 1px solid #b5b5b5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px; /* мобілка */
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+
+/* NAV – mobile first */
+.nav {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  flex-direction: column;
+  padding: 16px;
+  display: none;
+}
+
+.nav a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav a:hover {
+  color: #ff7700;
+}
+
+.nav.active {
+  display: flex;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search input {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.search button {
+  border: none;
+  background: #ff7700;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icons a {
+  color: #000;
+  font-size: 18px;
+}
+
+.icons a:hover {
+  color: #ff7700;
+}
+
+/* бургер – є на мобілці */
+.burger {
+  display: block;
+  background: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.burger i {
+  font-size: 24px;
+}
+
+/* header on scroll (фіолетовий) */
+.header.scrolled {
+  background: #3c0069;
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.header.scrolled .logo,
+.header.scrolled .nav a,
+.header.scrolled .icons a {
+  color: #ffffff;
+}
+
+.header.scrolled .search input {
+  border-color: #fff;
+  color: #000;
+}
+
+.header.scrolled .search button {
+  background: #ffffff;
+  color: #3c0069;
+}
+
+.header.scrolled .burger {
+  color: #ffffff;
+}
+
+.header.scrolled .nav {
+  background: #3c0069;
+}
+
+/* desktop / mobile search – mobile first */
+.desktop-search {
+  display: none;
+}
+
+.mobile-search {
+  display: flex;
+  margin-top: 8px;
+}
+
+/* десктопний хедер */
+@media (min-width: 769px) {
+  .header {
+    padding: 16px 160px;
+  }
+
+  .nav {
+    position: static;
+    background: transparent;
+    flex-direction: row;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .desktop-search {
+    display: flex;
+  }
+
+  .mobile-search {
+    display: none;
+    margin-top: 0;
+  }
+
+  .burger {
+    display: none;
+  }
+}
+
+/* ========== CART LAYOUT (mobile first) ========== */
+.cart-page {
+  padding-top: 80px; /* висота хедера */
+}
+
+.cart-section {
+  padding: 96px 20px 64px;
+}
+
+.cart-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* ліва частина */
+.cart-left {
+  flex: 1;
+  max-width: 100%;
+}
+
+.cart-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 32px;
+}
+
+.cart-products {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* одна картка в кошику – mobile first */
+.cart-item {
+  padding: 16px 0 32px;
+  border-bottom: 0.5px solid #a3a3a3;
+  display: flex;
+  gap: 15px;
+}
+
+.cart-item__image {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+}
+
+.cart-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cart-item__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.cart-item__info {
+  max-width: 191px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cart-item__name {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.cart-item__sku {
+  font-size: 14px;
+  font-weight: 400;
+  color: #7b7b7b;
+}
+
+/* права частина картки – mobile */
+.cart-item__right {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+/* лічильник */
+.cart-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.counter-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 0.5px solid #d9d9d9;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.counter-value {
+  width: 40px;
+  height: 32px;
+  border-radius: 4px;
+  border: 0.5px solid #d9d9d9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.cart-item__price {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.cart-item__remove {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: #555;
+}
+
+/* права колонка — підсумок (mobile first) */
+.cart-summary {
+  flex: 1;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  padding: 32px 20px;
+}
+
+.summary-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* поля */
+.summary-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.field {
+  border-radius: 7px;
+  border: 0.5px solid #9f9f9f;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.field--single input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.field--with-button {
+  justify-content: space-between;
+}
+
+.field--with-button input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin-right: 12px;
+}
+
+.field-btn {
+  min-width: 76px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.field-message {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6f6f6f;
+}
+
+.field-message--error {
+  color: #d32f2f;
+}
+
+.field-message--success {
+  color: #2e7d32;
+}
+
+/* повідомлення під промокодом */
+.promo-message {
+  margin-top: 6px;
+  font-size: 13px;
+  min-height: 16px; /* щоб блок не стрибав */
+}
+
+.promo-message--success {
+  color: #1a9c34; /* зелений */
+}
+
+.promo-message--error {
+  color: #d92b2b; /* червоний */
+}
+
+/* ціни */
+.summary-prices {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+}
+
+.summary-row__label {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.summary-row__label--muted {
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.summary-row__value {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.summary-taxes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-row--total .summary-row__label {
+  font-weight: 500;
+}
+
+/* оновлена кнопка-посилання */
+.summary-checkout {
+  width: 100%;
+  height: 56px;
+  border-radius: 6px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* щоб не підкреслювало */
+}
+
+/* ========== FOOTER (mobile first) ========== */
+.footer8 {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #000;
+  color: #fff;
+  padding: 80px 24px;
+}
+
+.footer8__inner {
+  width: 1120px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: flex-start;
+}
+
+.footer8__info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 256px;
+}
+
+.footer8__logo {
+  width: 65px;
+  object-fit: contain;
+}
+
+.footer8__text {
+  max-width: 384px;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.footer8__social {
+  margin-top: auto;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer8__s img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.footer8__sec {
+  width: auto;
+}
+
+.footer8__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.footer8__list {
+  list-style: none;
+}
+
+.footer8__list li a {
+  text-decoration: none;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 32px;
+}
+
+.footer8__list li a:hover {
+  color: #ffffff;
+}
+
+/* ========== RESPONSIVE UP (desktop styles) ========== */
+
+/* трішки ширші телефони – поправляємо праву частину айтема */
+@media (max-width: 360px) {
+  .header {
+    padding: 16px 12px;
+  }
+
+  .cart-item__right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* планшети/малі десктопи */
+@media (min-width: 769px) {
+  .cart-section {
+    padding: 112px 24px 80px;
+  }
+
+  .cart-inner {
+    flex-direction: row;
+  }
+
+  .cart-left,
+  .cart-summary {
+    max-width: 536px;
+  }
+
+  .cart-summary {
+    padding: 40px 32px;
+  }
+
+  .cart-item__content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .cart-item__right {
+    min-width: 240px;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+
+  .footer8__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* великі десктопи */
+@media (min-width: 1181px) {
+  .cart-section {
+    padding: 112px 160px 112px;
+  }
+
+  .footer8 {
+    padding: 104px 160px;
+  }
+
+  .footer8__inner {
+    grid-template-columns: 384px 295.5px 295.5px;
+  }
+
+  .footer8__sec {
+    width: 295.5px;
+  }
+
+  .footer8__social {
+    width: 173px;
+  }
+}
